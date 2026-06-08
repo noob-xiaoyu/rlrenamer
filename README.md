@@ -174,3 +174,5 @@ for (const auto& kv : symbolDb) {
 - `cmake --build build --config Release` → 编译通过（仅 C4819 编码警告，不影响功能）
 - `renamer_tests.exe` → 全部 11 个测试通过（2 原有 + 9 新增）
 - 端到端测试 → 所有 PP 指令类型正确重命名，普通代码中宏名保持原样
+
+全程由claude code + deepseek v4编写
