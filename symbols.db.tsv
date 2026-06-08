@@ -1,0 +1,832 @@
+name	kind	paramMin	varargs	origin	originLine	decl
+AttachAudioMixedProcessor	function	1	0	raylib.h	1740	I void AttachAudioMixedProcessor(AudioCallback processor); // Attach audio stream processor to the entire audio pipeline, receives frames x 2 samples as 'float' (stereo)
+AttachAudioStreamProcessor	function	2	0	raylib.h	1737	I void AttachAudioStreamProcessor(AudioStream stream, AudioCallback processor); // Attach audio stream processor to stream, receives frames x 2 samples as 'float' (stereo)
+AudioCallback	typedef_alias	-1	0	raylib.h	1663	d (*AudioCallback)(void *bufferData, unsigned int frames);
+AudioStream	typedef_struct	-1	0	raylib.h	479	t AudioStream {
+AutomationEvent	typedef_struct	-1	0	raylib.h	536	t AutomationEvent {
+AutomationEventList	typedef_struct	-1	0	raylib.h	543	t AutomationEventList {
+BeginBlendMode	function	1	0	raylib.h	1058	I void BeginBlendMode(int mode); // Begin blending mode (alpha, additive, multiplied, subtract, custom)
+BeginDrawing	function	0	0	raylib.h	1048	I void BeginDrawing(void); // Begin canvas (framebuffer) drawing
+BeginMode2D	function	1	0	raylib.h	1050	I void BeginMode2D(Camera2D camera); // Begin 2D mode with custom camera (2D)
+BeginMode3D	function	1	0	raylib.h	1052	I void BeginMode3D(Camera3D camera); // Begin 3D mode with custom camera (3D)
+BeginScissorMode	function	4	0	raylib.h	1060	I void BeginScissorMode(int x, int y, int width, int height); // Begin scissor mode (define screen area for following drawing)
+BeginShaderMode	function	1	0	raylib.h	1056	I void BeginShaderMode(Shader shader); // Begin custom shader drawing
+BeginTextureMode	function	1	0	raylib.h	1054	I void BeginTextureMode(RenderTexture2D target); // Begin drawing to render texture
+BeginVrStereoMode	function	1	0	raylib.h	1062	I void BeginVrStereoMode(VrStereoConfig config); // Begin stereo rendering (requires VR simulator)
+BlendMode	typedef_enum	-1	0	raylib.h	917	m {
+BoneInfo	typedef_struct	-1	0	raylib.h	405	t BoneInfo {
+BoundingBox	typedef_struct	-1	0	raylib.h	459	t BoundingBox {
+Camera	typedef_alias	-1	0	raylib.h	335	D Camera; // Camera type fallback, defaults to Camera3D
+Camera2D	typedef_struct	-1	0	raylib.h	338	t Camera2D {
+Camera3D	typedef_struct	-1	0	raylib.h	327	t Camera3D {
+CameraMode	typedef_enum	-1	0	raylib.h	945	m {
+CameraMoveForward	function	3	0	rcamera.h	146	I void CameraMoveForward(Camera *camera, float distance, bool moveInWorldPlane);
+CameraMoveRight	function	3	0	rcamera.h	148	I void CameraMoveRight(Camera *camera, float distance, bool moveInWorldPlane);
+CameraMoveToTarget	function	2	0	rcamera.h	149	I void CameraMoveToTarget(Camera *camera, float delta);
+CameraMoveUp	function	2	0	rcamera.h	147	I void CameraMoveUp(Camera *camera, float distance);
+CameraPitch	function	5	0	rcamera.h	153	I void CameraPitch(Camera *camera, float angle, bool lockView, bool rotateAroundTarget, bool rotateUp);
+CameraProjection	typedef_enum	-1	0	raylib.h	954	m {
+CameraRoll	function	2	0	rcamera.h	154	I void CameraRoll(Camera *camera, float angle);
+CameraYaw	function	3	0	rcamera.h	152	I void CameraYaw(Camera *camera, float angle, bool rotateAroundTarget);
+ChangeDirectory	function	1	0	raylib.h	1163	I int ChangeDirectory(const char *dirPath); // Change working directory, returns 0 on success
+CheckCollisionBoxSphere	function	3	0	raylib.h	1653	I bool CheckCollisionBoxSphere(BoundingBox box, Vector3 center, float radius); // Check collision between box and sphere
+CheckCollisionBoxes	function	2	0	raylib.h	1652	I bool CheckCollisionBoxes(BoundingBox box1, BoundingBox box2); // Check collision between two bounding boxes
+CheckCollisionCircleLine	function	4	0	raylib.h	1340	I bool CheckCollisionCircleLine(Vector2 center, float radius, Vector2 p1, Vector2 p2); // Check if circle collides with a line created between two points [p1] and [p2]
+CheckCollisionCircleRec	function	3	0	raylib.h	1339	I bool CheckCollisionCircleRec(Vector2 center, float radius, Rectangle rec); // Check collision between circle and rectangle
+CheckCollisionCircles	function	4	0	raylib.h	1338	I bool CheckCollisionCircles(Vector2 center1, float radius1, Vector2 center2, float radius2); // Check collision between two circles
+CheckCollisionLines	function	5	0	raylib.h	1346	I bool CheckCollisionLines(Vector2 startPos1, Vector2 endPos1, Vector2 startPos2, Vector2 endPos2, Vector2 *collisionPoint); // Check the collision between two lines defined by two points each, returns collision point by reference
+CheckCollisionPointCircle	function	3	0	raylib.h	1342	I bool CheckCollisionPointCircle(Vector2 point, Vector2 center, float radius); // Check if point is inside circle
+CheckCollisionPointLine	function	4	0	raylib.h	1344	I bool CheckCollisionPointLine(Vector2 point, Vector2 p1, Vector2 p2, int threshold); // Check if point belongs to line created between two points [p1] and [p2] with defined margin in pixels [threshold]
+CheckCollisionPointPoly	function	3	0	raylib.h	1345	I bool CheckCollisionPointPoly(Vector2 point, const Vector2 *points, int pointCount); // Check if point is within a polygon described by array of vertices
+CheckCollisionPointRec	function	2	0	raylib.h	1341	I bool CheckCollisionPointRec(Vector2 point, Rectangle rec); // Check if point is inside rectangle
+CheckCollisionPointTriangle	function	4	0	raylib.h	1343	I bool CheckCollisionPointTriangle(Vector2 point, Vector2 p1, Vector2 p2, Vector2 p3); // Check if point is inside a triangle
+CheckCollisionRecs	function	2	0	raylib.h	1337	I bool CheckCollisionRecs(Rectangle rec1, Rectangle rec2); // Check collision between two rectangles
+CheckCollisionSpheres	function	4	0	raylib.h	1651	I bool CheckCollisionSpheres(Vector3 center1, float radius1, Vector3 center2, float radius2); // Check collision between two spheres
+Clamp	function	3	0	raymath.h	217	I float Clamp(float value, float min, float max)
+ClearBackground	function	1	0	raylib.h	1047	I void ClearBackground(Color color); // Clear background (framebuffer) to color
+ClearWindowState	function	1	0	raylib.h	1000	I void ClearWindowState(unsigned int flags); // Clear window configuration state flags
+CloseAudioDevice	function	0	0	raylib.h	1667	I void CloseAudioDevice(void); // Close the audio device and context
+CloseWindow	function	0	0	raylib.h	989	I void CloseWindow(void); // Close window and unload OpenGL context
+CodepointToUTF8	function	2	0	raylib.h	1531	I const char *CodepointToUTF8(int codepoint, int *utf8Size); // Encode one codepoint into UTF-8 byte array (array length returned as parameter)
+Color	typedef_struct	-1	0	raylib.h	248	t Color {
+ColorAlpha	function	2	0	raylib.h	1480	I Color ColorAlpha(Color color, float alpha); // Get color with alpha applied, alpha goes from 0.0f to 1.0f
+ColorAlphaBlend	function	3	0	raylib.h	1481	I Color ColorAlphaBlend(Color dst, Color src, Color tint); // Get src alpha-blended into dst color with tint
+ColorBrightness	function	2	0	raylib.h	1478	I Color ColorBrightness(Color color, float factor); // Get color with brightness correction, brightness factor goes from -1.0f to 1.0f
+ColorContrast	function	2	0	raylib.h	1479	I Color ColorContrast(Color color, float contrast); // Get color with contrast correction, contrast values between -1.0f and 1.0f
+ColorFromHSV	function	3	0	raylib.h	1476	I Color ColorFromHSV(float hue, float saturation, float value); // Get a Color from HSV values, hue [0..360], saturation/value [0..1]
+ColorFromNormalized	function	1	0	raylib.h	1474	I Color ColorFromNormalized(Vector4 normalized); // Get Color from normalized values [0..1]
+ColorIsEqual	function	2	0	raylib.h	1470	I bool ColorIsEqual(Color col1, Color col2); // Check if two colors are equal
+ColorLerp	function	3	0	raylib.h	1482	I Color ColorLerp(Color color1, Color color2, float factor); // Get color lerp interpolation between two colors, factor [0.0f..1.0f]
+ColorNormalize	function	1	0	raylib.h	1473	I Vector4 ColorNormalize(Color color); // Get Color normalized as float [0..1]
+ColorTint	function	2	0	raylib.h	1477	I Color ColorTint(Color color, Color tint); // Get color multiplied with another color
+ColorToHSV	function	1	0	raylib.h	1475	I Vector3 ColorToHSV(Color color); // Get HSV values for a Color, hue [0..360], saturation/value [0..1]
+ColorToInt	function	1	0	raylib.h	1472	I int ColorToInt(Color color); // Get hexadecimal value for a Color (0xRRGGBBAA)
+CompressData	function	3	0	raylib.h	1176	I unsigned char *CompressData(const unsigned char *data, int dataSize, int *compDataSize); // Compress data (DEFLATE algorithm), memory must be MemFree()
+ComputeCRC32	function	2	0	raylib.h	1180	I unsigned int ComputeCRC32(const unsigned char *data, int dataSize); // Compute CRC32 hash code
+ComputeMD5	function	2	0	raylib.h	1181	I unsigned int *ComputeMD5(const unsigned char *data, int dataSize); // Compute MD5 hash code, returns static int[4] (16 bytes)
+ComputeSHA1	function	2	0	raylib.h	1182	I unsigned int *ComputeSHA1(const unsigned char *data, int dataSize); // Compute SHA1 hash code, returns static int[5] (20 bytes)
+ComputeSHA256	function	2	0	raylib.h	1183	I unsigned int *ComputeSHA256(const unsigned char *data, int dataSize); // Compute SHA256 hash code, returns static int[8] (32 bytes)
+ConfigFlags	typedef_enum	-1	0	raylib.h	555	m {
+CubemapLayout	typedef_enum	-1	0	raylib.h	901	m {
+DecodeDataBase64	function	2	0	raylib.h	1179	I unsigned char *DecodeDataBase64(const char *text, int *outputSize); // Decode Base64 string (expected NULL terminated), memory must be MemFree()
+DecompressData	function	3	0	raylib.h	1177	I unsigned char *DecompressData(const unsigned char *compData, int compDataSize, int *dataSize); // Decompress data (DEFLATE algorithm), memory must be MemFree()
+DetachAudioMixedProcessor	function	1	0	raylib.h	1741	I void DetachAudioMixedProcessor(AudioCallback processor); // Detach audio stream processor from the entire audio pipeline
+DetachAudioStreamProcessor	function	2	0	raylib.h	1738	I void DetachAudioStreamProcessor(AudioStream stream, AudioCallback processor); // Detach audio stream processor from stream
+DirectoryExists	function	1	0	raylib.h	1151	I bool DirectoryExists(const char *dirPath); // Check if directory path exists
+DisableCursor	function	0	0	raylib.h	1043	I void DisableCursor(void); // Disable cursor (lock cursor)
+DisableEventWaiting	function	0	0	raylib.h	1036	I void DisableEventWaiting(void); // Disable waiting for events on EndDrawing(), automatic events polling
+DrawBillboard	function	5	0	raylib.h	1607	I void DrawBillboard(Camera camera, Texture2D texture, Vector3 position, float scale, Color tint); // Draw a billboard texture
+DrawBillboardPro	function	9	0	raylib.h	1609	I void DrawBillboardPro(Camera camera, Texture2D texture, Rectangle rec, Vector3 position, Vector3 up, Vector2 size, Vector2 origin, float rotation, Color tint); // Draw a billboard texture defined by source rectangle with scaling and rotation
+DrawBillboardRec	function	6	0	raylib.h	1608	I void DrawBillboardRec(Camera camera, Texture2D texture, Rectangle rec, Vector3 position, Vector2 size, Color tint); // Draw a billboard texture defined by rectangle
+DrawBoundingBox	function	2	0	raylib.h	1606	I void DrawBoundingBox(BoundingBox box, Color color); // Draw bounding box (wires)
+DrawCapsule	function	6	0	raylib.h	1584	I void DrawCapsule(Vector3 startPos, Vector3 endPos, float radius, int rings, int slices, Color color); // Draw a capsule with the center of its sphere caps at startPos and endPos
+DrawCapsuleWires	function	6	0	raylib.h	1585	I void DrawCapsuleWires(Vector3 startPos, Vector3 endPos, float radius, int rings, int slices, Color color); // Draw capsule wireframe with the center of its sphere caps at startPos and endPos
+DrawCircle	function	4	0	raylib.h	1283	I void DrawCircle(int centerX, int centerY, float radius, Color color); // Draw a color-filled circle
+DrawCircle3D	function	5	0	raylib.h	1570	I void DrawCircle3D(Vector3 center, float radius, Vector3 rotationAxis, float rotationAngle, Color color); // Draw a circle in 3D world space
+DrawCircleGradient	function	4	0	raylib.h	1285	I void DrawCircleGradient(Vector2 center, float radius, Color inner, Color outer); // Draw a gradient-filled circle
+DrawCircleLines	function	4	0	raylib.h	1288	I void DrawCircleLines(int centerX, int centerY, float radius, Color color); // Draw circle outline
+DrawCircleLinesV	function	3	0	raylib.h	1289	I void DrawCircleLinesV(Vector2 center, float radius, Color color); // Draw circle outline (Vector version)
+DrawCircleSector	function	6	0	raylib.h	1286	I void DrawCircleSector(Vector2 center, float radius, float startAngle, float endAngle, int segments, Color color); // Draw a piece of a circle
+DrawCircleSectorLines	function	6	0	raylib.h	1287	I void DrawCircleSectorLines(Vector2 center, float radius, float startAngle, float endAngle, int segments, Color color); // Draw circle sector outline
+DrawCircleV	function	3	0	raylib.h	1284	I void DrawCircleV(Vector2 center, float radius, Color color); // Draw a color-filled circle (Vector version)
+DrawCube	function	5	0	raylib.h	1573	I void DrawCube(Vector3 position, float width, float height, float length, Color color); // Draw cube
+DrawCubeV	function	3	0	raylib.h	1574	I void DrawCubeV(Vector3 position, Vector3 size, Color color); // Draw cube (Vector version)
+DrawCubeWires	function	5	0	raylib.h	1575	I void DrawCubeWires(Vector3 position, float width, float height, float length, Color color); // Draw cube wires
+DrawCubeWiresV	function	3	0	raylib.h	1576	I void DrawCubeWiresV(Vector3 position, Vector3 size, Color color); // Draw cube wires (Vector version)
+DrawCylinder	function	6	0	raylib.h	1580	I void DrawCylinder(Vector3 position, float radiusTop, float radiusBottom, float height, int sides, Color color); // Draw a cylinder/cone
+DrawCylinderEx	function	6	0	raylib.h	1581	I void DrawCylinderEx(Vector3 startPos, Vector3 endPos, float startRadius, float endRadius, int sides, Color color); // Draw a cylinder with base at startPos and top at endPos
+DrawCylinderWires	function	6	0	raylib.h	1582	I void DrawCylinderWires(Vector3 position, float radiusTop, float radiusBottom, float height, int sides, Color color); // Draw a cylinder/cone wires
+DrawCylinderWiresEx	function	6	0	raylib.h	1583	I void DrawCylinderWiresEx(Vector3 startPos, Vector3 endPos, float startRadius, float endRadius, int sides, Color color); // Draw a cylinder wires with base at startPos and top at endPos
+DrawEllipse	function	5	0	raylib.h	1290	I void DrawEllipse(int centerX, int centerY, float radiusH, float radiusV, Color color); // Draw ellipse
+DrawEllipseLines	function	5	0	raylib.h	1292	I void DrawEllipseLines(int centerX, int centerY, float radiusH, float radiusV, Color color); // Draw ellipse outline
+DrawEllipseLinesV	function	4	0	raylib.h	1293	I void DrawEllipseLinesV(Vector2 center, float radiusH, float radiusV, Color color); // Draw ellipse outline (Vector version)
+DrawEllipseV	function	4	0	raylib.h	1291	I void DrawEllipseV(Vector2 center, float radiusH, float radiusV, Color color); // Draw ellipse (Vector version)
+DrawFPS	function	2	0	raylib.h	1506	I void DrawFPS(int posX, int posY); // Draw current FPS
+DrawGrid	function	2	0	raylib.h	1588	I void DrawGrid(int slices, float spacing); // Draw a grid (centered at (0, 0, 0))
+DrawLine	function	5	0	raylib.h	1277	I void DrawLine(int startPosX, int startPosY, int endPosX, int endPosY, Color color); // Draw a line
+DrawLine3D	function	3	0	raylib.h	1568	I void DrawLine3D(Vector3 startPos, Vector3 endPos, Color color); // Draw a line in 3D world space
+DrawLineBezier	function	4	0	raylib.h	1281	I void DrawLineBezier(Vector2 startPos, Vector2 endPos, float thick, Color color); // Draw line segment cubic-bezier in-out interpolation
+DrawLineDashed	function	5	0	raylib.h	1282	I void DrawLineDashed(Vector2 startPos, Vector2 endPos, int dashSize, int spaceSize, Color color); // Draw a dashed line
+DrawLineEx	function	4	0	raylib.h	1279	I void DrawLineEx(Vector2 startPos, Vector2 endPos, float thick, Color color); // Draw a line (using triangles/quads)
+DrawLineStrip	function	3	0	raylib.h	1280	I void DrawLineStrip(const Vector2 *points, int pointCount, Color color); // Draw lines sequence (using gl lines)
+DrawLineV	function	3	0	raylib.h	1278	I void DrawLineV(Vector2 startPos, Vector2 endPos, Color color); // Draw a line (using gl lines)
+DrawMesh	function	3	0	raylib.h	1615	I void DrawMesh(Mesh mesh, Material material, Matrix transform); // Draw a 3d mesh with material and transform
+DrawMeshInstanced	function	4	0	raylib.h	1616	I void DrawMeshInstanced(Mesh mesh, Material material, const Matrix *transforms, int instances); // Draw multiple mesh instances with material and different transforms
+DrawModel	function	4	0	raylib.h	1602	I void DrawModel(Model model, Vector3 position, float scale, Color tint); // Draw a model (with texture if set)
+DrawModelEx	function	6	0	raylib.h	1603	I void DrawModelEx(Model model, Vector3 position, Vector3 rotationAxis, float rotationAngle, Vector3 scale, Color tint); // Draw a model with extended parameters
+DrawModelWires	function	4	0	raylib.h	1604	I void DrawModelWires(Model model, Vector3 position, float scale, Color tint); // Draw a model wires (with texture if set)
+DrawModelWiresEx	function	6	0	raylib.h	1605	I void DrawModelWiresEx(Model model, Vector3 position, Vector3 rotationAxis, float rotationAngle, Vector3 scale, Color tint); // Draw a model wires (with texture if set) with extended parameters
+DrawPixel	function	3	0	raylib.h	1275	I void DrawPixel(int posX, int posY, Color color); // Draw a pixel using geometry [Can be slow, use with care]
+DrawPixelV	function	2	0	raylib.h	1276	I void DrawPixelV(Vector2 position, Color color); // Draw a pixel using geometry (Vector version) [Can be slow, use with care]
+DrawPlane	function	3	0	raylib.h	1586	I void DrawPlane(Vector3 centerPos, Vector2 size, Color color); // Draw a plane XZ
+DrawPoint3D	function	2	0	raylib.h	1569	I void DrawPoint3D(Vector3 position, Color color); // Draw a point in 3D space, actually a small line
+DrawPoly	function	5	0	raylib.h	1313	I void DrawPoly(Vector2 center, int sides, float radius, float rotation, Color color); // Draw a polygon of n sides
+DrawPolyLines	function	5	0	raylib.h	1314	I void DrawPolyLines(Vector2 center, int sides, float radius, float rotation, Color color); // Draw a polygon outline of n sides
+DrawPolyLinesEx	function	6	0	raylib.h	1315	I void DrawPolyLinesEx(Vector2 center, int sides, float radius, float rotation, float lineThick, Color color); // Draw a polygon outline of n sides with extended parameters
+DrawRay	function	2	0	raylib.h	1587	I void DrawRay(Ray ray, Color color); // Draw a ray line
+DrawRectangle	function	5	0	raylib.h	1296	I void DrawRectangle(int posX, int posY, int width, int height, Color color); // Draw a color-filled rectangle
+DrawRectangleGradientEx	function	5	0	raylib.h	1302	I void DrawRectangleGradientEx(Rectangle rec, Color topLeft, Color bottomLeft, Color bottomRight, Color topRight); // Draw a gradient-filled rectangle with custom vertex colors
+DrawRectangleGradientH	function	6	0	raylib.h	1301	I void DrawRectangleGradientH(int posX, int posY, int width, int height, Color left, Color right); // Draw a horizontal-gradient-filled rectangle
+DrawRectangleGradientV	function	6	0	raylib.h	1300	I void DrawRectangleGradientV(int posX, int posY, int width, int height, Color top, Color bottom); // Draw a vertical-gradient-filled rectangle
+DrawRectangleLines	function	5	0	raylib.h	1303	I void DrawRectangleLines(int posX, int posY, int width, int height, Color color); // Draw rectangle outline
+DrawRectangleLinesEx	function	3	0	raylib.h	1304	I void DrawRectangleLinesEx(Rectangle rec, float lineThick, Color color); // Draw rectangle outline with extended parameters
+DrawRectanglePro	function	4	0	raylib.h	1299	I void DrawRectanglePro(Rectangle rec, Vector2 origin, float rotation, Color color); // Draw a color-filled rectangle with pro parameters
+DrawRectangleRec	function	2	0	raylib.h	1298	I void DrawRectangleRec(Rectangle rec, Color color); // Draw a color-filled rectangle
+DrawRectangleRounded	function	4	0	raylib.h	1305	I void DrawRectangleRounded(Rectangle rec, float roundness, int segments, Color color); // Draw rectangle with rounded edges
+DrawRectangleRoundedLines	function	4	0	raylib.h	1306	I void DrawRectangleRoundedLines(Rectangle rec, float roundness, int segments, Color color); // Draw rectangle lines with rounded edges
+DrawRectangleRoundedLinesEx	function	5	0	raylib.h	1307	I void DrawRectangleRoundedLinesEx(Rectangle rec, float roundness, int segments, float lineThick, Color color); // Draw rectangle lines with rounded edges outline
+DrawRectangleV	function	3	0	raylib.h	1297	I void DrawRectangleV(Vector2 position, Vector2 size, Color color); // Draw a color-filled rectangle (Vector version)
+DrawRing	function	7	0	raylib.h	1294	I void DrawRing(Vector2 center, float innerRadius, float outerRadius, float startAngle, float endAngle, int segments, Color color); // Draw ring
+DrawRingLines	function	7	0	raylib.h	1295	I void DrawRingLines(Vector2 center, float innerRadius, float outerRadius, float startAngle, float endAngle, int segments, Color color); // Draw ring outline
+DrawSphere	function	3	0	raylib.h	1577	I void DrawSphere(Vector3 centerPos, float radius, Color color); // Draw sphere
+DrawSphereEx	function	5	0	raylib.h	1578	I void DrawSphereEx(Vector3 centerPos, float radius, int rings, int slices, Color color); // Draw sphere with extended parameters
+DrawSphereWires	function	5	0	raylib.h	1579	I void DrawSphereWires(Vector3 centerPos, float radius, int rings, int slices, Color color); // Draw sphere wires
+DrawSplineBasis	function	4	0	raylib.h	1319	I void DrawSplineBasis(const Vector2 *points, int pointCount, float thick, Color color); // Draw spline: B-Spline, minimum 4 points
+DrawSplineBezierCubic	function	4	0	raylib.h	1322	I void DrawSplineBezierCubic(const Vector2 *points, int pointCount, float thick, Color color); // Draw spline: Cubic Bezier, minimum 4 points (2 control points): [p1, c2, c3, p4, c5, c6...]
+DrawSplineBezierQuadratic	function	4	0	raylib.h	1321	I void DrawSplineBezierQuadratic(const Vector2 *points, int pointCount, float thick, Color color); // Draw spline: Quadratic Bezier, minimum 3 points (1 control point): [p1, c2, p3, c4...]
+DrawSplineCatmullRom	function	4	0	raylib.h	1320	I void DrawSplineCatmullRom(const Vector2 *points, int pointCount, float thick, Color color); // Draw spline: Catmull-Rom, minimum 4 points
+DrawSplineLinear	function	4	0	raylib.h	1318	I void DrawSplineLinear(const Vector2 *points, int pointCount, float thick, Color color); // Draw spline: Linear, minimum 2 points
+DrawSplineSegmentBasis	function	6	0	raylib.h	1324	I void DrawSplineSegmentBasis(Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4, float thick, Color color); // Draw spline segment: B-Spline, 4 points
+DrawSplineSegmentBezierCubic	function	6	0	raylib.h	1327	I void DrawSplineSegmentBezierCubic(Vector2 p1, Vector2 c2, Vector2 c3, Vector2 p4, float thick, Color color); // Draw spline segment: Cubic Bezier, 2 points, 2 control points
+DrawSplineSegmentBezierQuadratic	function	5	0	raylib.h	1326	I void DrawSplineSegmentBezierQuadratic(Vector2 p1, Vector2 c2, Vector2 p3, float thick, Color color); // Draw spline segment: Quadratic Bezier, 2 points, 1 control point
+DrawSplineSegmentCatmullRom	function	6	0	raylib.h	1325	I void DrawSplineSegmentCatmullRom(Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4, float thick, Color color); // Draw spline segment: Catmull-Rom, 4 points
+DrawSplineSegmentLinear	function	4	0	raylib.h	1323	I void DrawSplineSegmentLinear(Vector2 p1, Vector2 p2, float thick, Color color); // Draw spline segment: Linear, 2 points
+DrawText	function	5	0	raylib.h	1507	I void DrawText(const char *text, int posX, int posY, int fontSize, Color color); // Draw text (using default font)
+DrawTextCodepoint	function	5	0	raylib.h	1510	I void DrawTextCodepoint(Font font, int codepoint, Vector2 position, float fontSize, Color tint); // Draw one character (codepoint)
+DrawTextCodepoints	function	7	0	raylib.h	1511	I void DrawTextCodepoints(Font font, const int *codepoints, int codepointCount, Vector2 position, float fontSize, float spacing, Color tint); // Draw multiple characters (codepoint)
+DrawTextEx	function	6	0	raylib.h	1508	I void DrawTextEx(Font font, const char *text, Vector2 position, float fontSize, float spacing, Color tint); // Draw text using font and additional parameters
+DrawTextPro	function	8	0	raylib.h	1509	I void DrawTextPro(Font font, const char *text, Vector2 position, Vector2 origin, float rotation, float fontSize, float spacing, Color tint); // Draw text using Font and pro parameters (rotation)
+DrawTexture	function	4	0	raylib.h	1462	I void DrawTexture(Texture2D texture, int posX, int posY, Color tint); // Draw a Texture2D
+DrawTextureEx	function	5	0	raylib.h	1464	I void DrawTextureEx(Texture2D texture, Vector2 position, float rotation, float scale, Color tint); // Draw a Texture2D with extended parameters
+DrawTextureNPatch	function	6	0	raylib.h	1467	I void DrawTextureNPatch(Texture2D texture, NPatchInfo nPatchInfo, Rectangle dstrec, Vector2 origin, float rotation, Color tint); // Draw a texture (or part of it) that stretches or shrinks nicely
+DrawTexturePro	function	6	0	raylib.h	1466	I void DrawTexturePro(Texture2D texture, Rectangle srcrec, Rectangle dstrec, Vector2 origin, float rotation, Color tint); // Draw a part of a texture defined by a source rectangle to destination rectangle, with scaling and rotation
+DrawTextureRec	function	4	0	raylib.h	1465	I void DrawTextureRec(Texture2D texture, Rectangle rec, Vector2 position, Color tint); // Draw a part of a texture defined by a rectangle
+DrawTextureV	function	3	0	raylib.h	1463	I void DrawTextureV(Texture2D texture, Vector2 position, Color tint); // Draw a Texture2D with position defined as Vector2
+DrawTriangle	function	4	0	raylib.h	1308	I void DrawTriangle(Vector2 v1, Vector2 v2, Vector2 v3, Color color); // Draw a color-filled triangle (vertex in counter-clockwise order!)
+DrawTriangle3D	function	4	0	raylib.h	1571	I void DrawTriangle3D(Vector3 v1, Vector3 v2, Vector3 v3, Color color); // Draw a color-filled triangle (vertex in counter-clockwise order!)
+DrawTriangleFan	function	3	0	raylib.h	1311	I void DrawTriangleFan(const Vector2 *points, int pointCount, Color color); // Draw a triangle fan defined by points (first vertex is the center)
+DrawTriangleGradient	function	6	0	raylib.h	1309	I void DrawTriangleGradient(Vector2 v1, Vector2 v2, Vector2 v3, Color c1, Color c2, Color c3); // Draw triangle with interpolated colors (vertex in counter-clockwise order!)
+DrawTriangleLines	function	4	0	raylib.h	1310	I void DrawTriangleLines(Vector2 v1, Vector2 v2, Vector2 v3, Color color); // Draw triangle outline (vertex in counter-clockwise order!)
+DrawTriangleStrip	function	3	0	raylib.h	1312	I void DrawTriangleStrip(const Vector2 *points, int pointCount, Color color); // Draw a triangle strip defined by points
+DrawTriangleStrip3D	function	3	0	raylib.h	1572	I void DrawTriangleStrip3D(const Vector3 *points, int pointCount, Color color); // Draw a triangle strip defined by points
+EnableCursor	function	0	0	raylib.h	1042	I void EnableCursor(void); // Enable cursor (unlock cursor)
+EnableEventWaiting	function	0	0	raylib.h	1035	I void EnableEventWaiting(void); // Enable waiting for events on EndDrawing(), no automatic event polling
+EncodeDataBase64	function	3	0	raylib.h	1178	I char *EncodeDataBase64(const unsigned char *data, int dataSize, int *outputSize); // Encode data to Base64 string (includes NULL terminator), memory must be MemFree()
+EndBlendMode	function	0	0	raylib.h	1059	I void EndBlendMode(void); // End blending mode (reset to default: alpha blending)
+EndDrawing	function	0	0	raylib.h	1049	I void EndDrawing(void); // End canvas (framebuffer) drawing and swap buffers (double buffering)
+EndMode2D	function	0	0	raylib.h	1051	I void EndMode2D(void); // End 2D mode with custom camera
+EndMode3D	function	0	0	raylib.h	1053	I void EndMode3D(void); // End 3D mode and returns to default 2D orthographic mode
+EndScissorMode	function	0	0	raylib.h	1061	I void EndScissorMode(void); // End scissor mode
+EndShaderMode	function	0	0	raylib.h	1057	I void EndShaderMode(void); // End custom shader drawing (use default shader)
+EndTextureMode	function	0	0	raylib.h	1055	I void EndTextureMode(void); // End drawing to render texture
+EndVrStereoMode	function	0	0	raylib.h	1063	I void EndVrStereoMode(void); // End stereo rendering (requires VR simulator)
+ExportAutomationEventList	function	2	0	raylib.h	1188	I bool ExportAutomationEventList(AutomationEventList list, const char *fileName); // Export automation events list as text file
+ExportDataAsCode	function	3	0	raylib.h	1132	I bool ExportDataAsCode(const unsigned char *data, int dataSize, const char *fileName); // Export data to code (.h), returns true on success
+ExportFontAsCode	function	2	0	raylib.h	1503	I bool ExportFontAsCode(Font font, const char *fileName); // Export font as code file, returns true on success
+ExportImage	function	2	0	raylib.h	1364	I bool ExportImage(Image image, const char *fileName); // Export image data to file, returns true on success
+ExportImageAsCode	function	2	0	raylib.h	1366	I bool ExportImageAsCode(Image image, const char *fileName); // Export image as code file defining an array of bytes, returns true on success
+ExportImageToMemory	function	3	0	raylib.h	1365	I unsigned char *ExportImageToMemory(Image image, const char *fileType, int *fileSize); // Export image to memory buffer, memory must be MemFree()
+ExportMesh	function	2	0	raylib.h	1619	I bool ExportMesh(Mesh mesh, const char *fileName); // Export mesh data to file, returns true on success
+ExportMeshAsCode	function	2	0	raylib.h	1620	I bool ExportMeshAsCode(Mesh mesh, const char *fileName); // Export mesh as code file (.h) defining multiple arrays of vertex attributes
+ExportWave	function	2	0	raylib.h	1684	I bool ExportWave(Wave wave, const char *fileName); // Export wave data to file, returns true on success
+ExportWaveAsCode	function	2	0	raylib.h	1685	I bool ExportWaveAsCode(Wave wave, const char *fileName); // Export wave sample data to code (.h), returns true on success
+Fade	function	2	0	raylib.h	1471	I Color Fade(Color color, float alpha); // Get color with alpha applied, alpha goes from 0.0f to 1.0f
+FileCopy	function	2	0	raylib.h	1146	I int FileCopy(const char *srcPath, const char *dstPath); // Copy file from one path to another, dstPath created if it doesn't exist, returns 0 on success
+FileExists	function	1	0	raylib.h	1150	I bool FileExists(const char *fileName); // Check if file exists
+FileMove	function	2	0	raylib.h	1147	I int FileMove(const char *srcPath, const char *dstPath); // Move file from one directory to another, dstPath created if it doesn't exist, returns 0 on success
+FilePathList	typedef_struct	-1	0	raylib.h	530	t FilePathList {
+FileRemove	function	1	0	raylib.h	1145	I int FileRemove(const char *fileName); // Remove file (if exists), returns 0 on success
+FileRename	function	2	0	raylib.h	1144	I int FileRename(const char *fileName, const char *fileRename); // Rename file (if exists), returns 0 on success
+FileTextFindIndex	function	2	0	raylib.h	1149	I int FileTextFindIndex(const char *fileName, const char *search); // Find text in existing file, returns -1 if index not found or index otherwise
+FileTextReplace	function	3	0	raylib.h	1148	I int FileTextReplace(const char *fileName, const char *search, const char *replacement); // Replace text in an existing file, returns 0 on success
+FloatEquals	function	2	0	raymath.h	259	I int FloatEquals(float x, float y)
+Font	typedef_struct	-1	0	raylib.h	317	t Font {
+FontType	typedef_enum	-1	0	raylib.h	910	m {
+GamepadAxis	typedef_enum	-1	0	raylib.h	760	m {
+GamepadButton	typedef_enum	-1	0	raylib.h	738	m {
+GenImageCellular	function	3	0	raylib.h	1376	I Image GenImageCellular(int width, int height, int tileSize); // Generate image: cellular algorithm, bigger tileSize means bigger cells
+GenImageChecked	function	6	0	raylib.h	1373	I Image GenImageChecked(int width, int height, int checksX, int checksY, Color col1, Color col2); // Generate image: checked
+GenImageColor	function	3	0	raylib.h	1369	I Image GenImageColor(int width, int height, Color color); // Generate image: plain color
+GenImageFontAtlas	function	6	0	raylib.h	1500	I Image GenImageFontAtlas(const GlyphInfo *glyphs, Rectangle **glyphRecs, int glyphCount, int fontSize, int padding, int packMethod); // Generate image font atlas using chars info
+GenImageGradientLinear	function	5	0	raylib.h	1370	I Image GenImageGradientLinear(int width, int height, int direction, Color start, Color end); // Generate image: linear gradient, direction in degrees [0..360], 0=Vertical gradient
+GenImageGradientRadial	function	5	0	raylib.h	1371	I Image GenImageGradientRadial(int width, int height, float density, Color inner, Color outer); // Generate image: radial gradient
+GenImageGradientSquare	function	5	0	raylib.h	1372	I Image GenImageGradientSquare(int width, int height, float density, Color inner, Color outer); // Generate image: square gradient
+GenImagePerlinNoise	function	5	0	raylib.h	1375	I Image GenImagePerlinNoise(int width, int height, int offsetX, int offsetY, float scale); // Generate image: perlin noise
+GenImageText	function	3	0	raylib.h	1377	I Image GenImageText(int width, int height, const char *text); // Generate image: grayscale image from text data
+GenImageWhiteNoise	function	3	0	raylib.h	1374	I Image GenImageWhiteNoise(int width, int height, float factor); // Generate image: white noise
+GenMeshCone	function	3	0	raylib.h	1629	I Mesh GenMeshCone(float radius, float height, int slices); // Generate cone/pyramid mesh
+GenMeshCube	function	3	0	raylib.h	1625	I Mesh GenMeshCube(float width, float height, float length); // Generate cuboid mesh
+GenMeshCubicmap	function	2	0	raylib.h	1633	I Mesh GenMeshCubicmap(Image cubicmap, Vector3 cubeSize); // Generate cubes-based map mesh from image data
+GenMeshCylinder	function	3	0	raylib.h	1628	I Mesh GenMeshCylinder(float radius, float height, int slices); // Generate cylinder mesh
+GenMeshHeightmap	function	2	0	raylib.h	1632	I Mesh GenMeshHeightmap(Image heightmap, Vector3 size); // Generate heightmap mesh from image data
+GenMeshHemiSphere	function	3	0	raylib.h	1627	I Mesh GenMeshHemiSphere(float radius, int rings, int slices); // Generate half-sphere mesh (no bottom cap)
+GenMeshKnot	function	4	0	raylib.h	1631	I Mesh GenMeshKnot(float radius, float size, int radSeg, int sides); // Generate trefoil knot mesh
+GenMeshPlane	function	4	0	raylib.h	1624	I Mesh GenMeshPlane(float width, float length, int resX, int resZ); // Generate plane mesh (with subdivisions)
+GenMeshPoly	function	2	0	raylib.h	1623	I Mesh GenMeshPoly(int sides, float radius); // Generate polygonal mesh
+GenMeshSphere	function	3	0	raylib.h	1626	I Mesh GenMeshSphere(float radius, int rings, int slices); // Generate sphere mesh (standard sphere)
+GenMeshTangents	function	1	0	raylib.h	1618	I void GenMeshTangents(Mesh *mesh); // Compute mesh tangents
+GenMeshTorus	function	4	0	raylib.h	1630	I Mesh GenMeshTorus(float radius, float size, int radSeg, int sides); // Generate torus mesh
+GenTextureMipmaps	function	1	0	raylib.h	1457	I void GenTextureMipmaps(Texture2D *texture); // Generate GPU mipmaps for a texture
+Gesture	typedef_enum	-1	0	raylib.h	930	m {
+GestureEvent	typedef_struct	-1	0	rgestures.h	106	t {
+GesturesData	typedef_struct	-1	0	rgestures.h	198	t {
+GetApplicationDirectory	function	0	0	raylib.h	1161	I const char *GetApplicationDirectory(void); // Get the directory of the running application (uses static string)
+GetCameraForward	function	1	0	rcamera.h	141	I Vector3 GetCameraForward(Camera *camera);
+GetCameraMatrix	function	1	0	raylib.h	1090	I Matrix GetCameraMatrix(Camera camera); // Get camera transform matrix (view matrix)
+GetCameraMatrix2D	function	1	0	raylib.h	1091	I Matrix GetCameraMatrix2D(Camera2D camera); // Get camera 2d transform matrix
+GetCameraProjectionMatrix	function	2	0	rcamera.h	157	I Matrix GetCameraProjectionMatrix(Camera *camera, float aspect);
+GetCameraRight	function	1	0	rcamera.h	143	I Vector3 GetCameraRight(Camera *camera);
+GetCameraUp	function	1	0	rcamera.h	142	I Vector3 GetCameraUp(Camera *camera);
+GetCameraViewMatrix	function	1	0	rcamera.h	156	I Matrix GetCameraViewMatrix(Camera *camera);
+GetCharPressed	function	0	0	raylib.h	1206	I int GetCharPressed(void); // Get char pressed (unicode), call it multiple times for chars queued, returns 0 when the queue is empty
+GetClipboardImage	function	0	0	raylib.h	1034	I Image GetClipboardImage(void); // Get clipboard image content
+GetClipboardText	function	0	0	raylib.h	1033	I const char *GetClipboardText(void); // Get clipboard text content
+GetCodepoint	function	2	0	raylib.h	1528	I int GetCodepoint(const char *text, int *codepointSize); // Get next codepoint in a UTF-8 encoded string, 0x3f('?') is returned on failure
+GetCodepointCount	function	1	0	raylib.h	1527	I int GetCodepointCount(const char *text); // Get total number of codepoints in a UTF-8 encoded string
+GetCodepointNext	function	2	0	raylib.h	1529	I int GetCodepointNext(const char *text, int *codepointSize); // Get next codepoint in a UTF-8 encoded string, 0x3f('?') is returned on failure
+GetCodepointPrevious	function	2	0	raylib.h	1530	I int GetCodepointPrevious(const char *text, int *codepointSize); // Get previous codepoint in a UTF-8 encoded string, 0x3f('?') is returned on failure
+GetCollisionRec	function	2	0	raylib.h	1347	I Rectangle GetCollisionRec(Rectangle rec1, Rectangle rec2); // Get collision rectangle for two rectangles collision
+GetColor	function	1	0	raylib.h	1483	I Color GetColor(unsigned int hexValue); // Get Color structure from hexadecimal value
+GetCurrentMonitor	function	0	0	raylib.h	1022	I int GetCurrentMonitor(void); // Get current monitor where window is placed
+GetDirectoryFileCount	function	1	0	raylib.h	1172	I unsigned int GetDirectoryFileCount(const char *dirPath); // Get the file count in a directory
+GetDirectoryFileCountEx	function	3	0	raylib.h	1173	I unsigned int GetDirectoryFileCountEx(const char *basePath, const char *filter, bool scanSubdirs); // Get the file count in a directory with extension filtering and recursive directory scan. Use 'DIR' in the filter string to include directories in the result
+GetDirectoryPath	function	1	0	raylib.h	1158	I const char *GetDirectoryPath(const char *filePath); // Get full path for a given fileName with path (uses static string)
+GetFPS	function	0	0	raylib.h	1097	I int GetFPS(void); // Get current FPS
+GetFileExtension	function	1	0	raylib.h	1155	I const char *GetFileExtension(const char *fileName); // Get pointer to extension for a filename string (includes dot: '.png')
+GetFileLength	function	1	0	raylib.h	1153	I int GetFileLength(const char *fileName); // Get file length in bytes (NOTE: GetFileSize() conflicts with windows.h)
+GetFileModTime	function	1	0	raylib.h	1154	I long GetFileModTime(const char *fileName); // Get file modification time (last write time)
+GetFileName	function	1	0	raylib.h	1156	I const char *GetFileName(const char *filePath); // Get pointer to filename for a path string
+GetFileNameWithoutExt	function	1	0	raylib.h	1157	I const char *GetFileNameWithoutExt(const char *filePath); // Get filename string without extension (uses static string)
+GetFontDefault	function	0	0	raylib.h	1493	I Font GetFontDefault(void); // Get the default Font
+GetFrameTime	function	0	0	raylib.h	1095	I float GetFrameTime(void); // Get time in seconds for last frame drawn (delta time)
+GetGamepadAxisCount	function	1	0	raylib.h	1218	I int GetGamepadAxisCount(int gamepad); // Get axis count for a gamepad
+GetGamepadAxisMovement	function	2	0	raylib.h	1219	I float GetGamepadAxisMovement(int gamepad, int axis); // Get movement value for a gamepad axis
+GetGamepadButtonPressed	function	0	0	raylib.h	1217	I int GetGamepadButtonPressed(void); // Get the last gamepad button pressed
+GetGamepadName	function	1	0	raylib.h	1212	I const char *GetGamepadName(int gamepad); // Get gamepad internal name id
+GetGestureDetected	function	0	0	raylib.h	1251	I int GetGestureDetected(void); // Get latest detected gesture
+GetGestureDragAngle	function	0	0	raylib.h	1254	I float GetGestureDragAngle(void); // Get gesture drag angle
+GetGestureDragVector	function	0	0	raylib.h	1253	I Vector2 GetGestureDragVector(void); // Get gesture drag vector
+GetGestureHoldDuration	function	0	0	raylib.h	1252	I float GetGestureHoldDuration(void); // Get gesture hold time in seconds
+GetGesturePinchAngle	function	0	0	raylib.h	1256	I float GetGesturePinchAngle(void); // Get gesture pinch angle
+GetGesturePinchVector	function	0	0	raylib.h	1255	I Vector2 GetGesturePinchVector(void); // Get gesture pinch delta
+GetGlyphAtlasRec	function	2	0	raylib.h	1520	I Rectangle GetGlyphAtlasRec(Font font, int codepoint); // Get glyph rectangle in font atlas for a codepoint (unicode character), fallback to '?' if not found
+GetGlyphIndex	function	2	0	raylib.h	1518	I int GetGlyphIndex(Font font, int codepoint); // Get glyph index position in font for a codepoint (unicode character), fallback to '?' if not found
+GetGlyphInfo	function	2	0	raylib.h	1519	I GlyphInfo GetGlyphInfo(Font font, int codepoint); // Get glyph font info data for a codepoint (unicode character), fallback to '?' if not found
+GetImageAlphaBorder	function	2	0	raylib.h	1414	I Rectangle GetImageAlphaBorder(Image image, float threshold); // Get image alpha border rectangle
+GetImageColor	function	3	0	raylib.h	1415	I Color GetImageColor(Image image, int x, int y); // Get image pixel color at (x, y) position
+GetKeyName	function	1	0	raylib.h	1207	I const char *GetKeyName(int key); // Get name of a QWERTY key on the current keyboard layout (eg returns string 'q' for KEY_A on an AZERTY keyboard)
+GetKeyPressed	function	0	0	raylib.h	1205	I int GetKeyPressed(void); // Get key pressed (keycode), call it multiple times for keys queued, returns 0 when the queue is empty
+GetMasterVolume	function	0	0	raylib.h	1670	I float GetMasterVolume(void); // Get master volume (listener)
+GetMeshBoundingBox	function	1	0	raylib.h	1617	I BoundingBox GetMeshBoundingBox(Mesh mesh); // Compute mesh bounding box limits
+GetModelBoundingBox	function	1	0	raylib.h	1599	I BoundingBox GetModelBoundingBox(Model model); // Compute model bounding box limits (considers all meshes)
+GetMonitorCount	function	0	0	raylib.h	1021	I int GetMonitorCount(void); // Get number of connected monitors
+GetMonitorHeight	function	1	0	raylib.h	1025	I int GetMonitorHeight(int monitor); // Get specified monitor height (current video mode used by monitor)
+GetMonitorName	function	1	0	raylib.h	1031	I const char *GetMonitorName(int monitor); // Get the human-readable, UTF-8 encoded name of the specified monitor
+GetMonitorPhysicalHeight	function	1	0	raylib.h	1027	I int GetMonitorPhysicalHeight(int monitor); // Get specified monitor physical height in millimetres
+GetMonitorPhysicalWidth	function	1	0	raylib.h	1026	I int GetMonitorPhysicalWidth(int monitor); // Get specified monitor physical width in millimetres
+GetMonitorPosition	function	1	0	raylib.h	1023	I Vector2 GetMonitorPosition(int monitor); // Get specified monitor position
+GetMonitorRefreshRate	function	1	0	raylib.h	1028	I int GetMonitorRefreshRate(int monitor); // Get specified monitor refresh rate
+GetMonitorWidth	function	1	0	raylib.h	1024	I int GetMonitorWidth(int monitor); // Get specified monitor width (current video mode used by monitor)
+GetMouseDelta	function	0	0	raylib.h	1231	I Vector2 GetMouseDelta(void); // Get mouse delta between frames
+GetMousePosition	function	0	0	raylib.h	1230	I Vector2 GetMousePosition(void); // Get mouse position XY
+GetMouseWheelMove	function	0	0	raylib.h	1235	I float GetMouseWheelMove(void); // Get mouse wheel movement for X or Y, whichever is larger
+GetMouseWheelMoveV	function	0	0	raylib.h	1236	I Vector2 GetMouseWheelMoveV(void); // Get mouse wheel movement for both X and Y
+GetMouseX	function	0	0	raylib.h	1228	I int GetMouseX(void); // Get mouse position X
+GetMouseY	function	0	0	raylib.h	1229	I int GetMouseY(void); // Get mouse position Y
+GetMusicTimeLength	function	1	0	raylib.h	1717	I float GetMusicTimeLength(Music music); // Get music time length (in seconds)
+GetMusicTimePlayed	function	1	0	raylib.h	1718	I float GetMusicTimePlayed(Music music); // Get current music time played (in seconds)
+GetPixelColor	function	2	0	raylib.h	1484	I Color GetPixelColor(const void *srcPtr, int format); // Get Color from a source pixel pointer of certain format
+GetPixelDataSize	function	3	0	raylib.h	1486	I int GetPixelDataSize(int width, int height, int format); // Get pixel data size in bytes for certain format
+GetPrevDirectoryPath	function	1	0	raylib.h	1159	I const char *GetPrevDirectoryPath(const char *dirPath); // Get previous directory path for a given path (uses static string)
+GetRandomValue	function	2	0	raylib.h	1109	I int GetRandomValue(int min, int max); // Get a random value between min and max (both included)
+GetRayCollisionBox	function	2	0	raylib.h	1655	I RayCollision GetRayCollisionBox(Ray ray, BoundingBox box); // Get collision info between ray and box
+GetRayCollisionMesh	function	3	0	raylib.h	1656	I RayCollision GetRayCollisionMesh(Ray ray, Mesh mesh, Matrix transform); // Get collision info between ray and mesh
+GetRayCollisionQuad	function	5	0	raylib.h	1658	I RayCollision GetRayCollisionQuad(Ray ray, Vector3 p1, Vector3 p2, Vector3 p3, Vector3 p4); // Get collision info between ray and quad
+GetRayCollisionSphere	function	3	0	raylib.h	1654	I RayCollision GetRayCollisionSphere(Ray ray, Vector3 center, float radius); // Get collision info between ray and sphere
+GetRayCollisionTriangle	function	4	0	raylib.h	1657	I RayCollision GetRayCollisionTriangle(Ray ray, Vector3 p1, Vector3 p2, Vector3 p3); // Get collision info between ray and triangle
+GetRenderHeight	function	0	0	raylib.h	1020	I int GetRenderHeight(void); // Get current render height (it considers HiDPI)
+GetRenderWidth	function	0	0	raylib.h	1019	I int GetRenderWidth(void); // Get current render width (it considers HiDPI)
+GetScreenHeight	function	0	0	raylib.h	1018	I int GetScreenHeight(void); // Get current screen height
+GetScreenToWorld2D	function	2	0	raylib.h	1089	I Vector2 GetScreenToWorld2D(Vector2 position, Camera2D camera); // Get world space position for a 2d camera screen space position
+GetScreenToWorldRay	function	2	0	raylib.h	1084	I Ray GetScreenToWorldRay(Vector2 position, Camera camera); // Get a ray trace from screen position (i.e mouse)
+GetScreenToWorldRayEx	function	4	0	raylib.h	1085	I Ray GetScreenToWorldRayEx(Vector2 position, Camera camera, int width, int height); // Get a ray trace from screen position (i.e mouse) in a viewport
+GetScreenWidth	function	0	0	raylib.h	1017	I int GetScreenWidth(void); // Get current screen width
+GetShaderLocation	function	2	0	raylib.h	1074	I int GetShaderLocation(Shader shader, const char *uniformName); // Get shader uniform location
+GetShaderLocationAttrib	function	2	0	raylib.h	1075	I int GetShaderLocationAttrib(Shader shader, const char *attribName); // Get shader attribute location
+GetShapesTexture	function	0	0	raylib.h	1271	I Texture2D GetShapesTexture(void); // Get texture that is used for shapes drawing
+GetShapesTextureRectangle	function	0	0	raylib.h	1272	I Rectangle GetShapesTextureRectangle(void); // Get texture source rectangle that is used for shapes drawing
+GetSplinePointBasis	function	5	0	raylib.h	1331	I Vector2 GetSplinePointBasis(Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4, float t); // Get (evaluate) spline point: B-Spline
+GetSplinePointBezierCubic	function	5	0	raylib.h	1334	I Vector2 GetSplinePointBezierCubic(Vector2 p1, Vector2 c2, Vector2 c3, Vector2 p4, float t); // Get (evaluate) spline point: Cubic Bezier
+GetSplinePointBezierQuadratic	function	4	0	raylib.h	1333	I Vector2 GetSplinePointBezierQuadratic(Vector2 p1, Vector2 c2, Vector2 p3, float t); // Get (evaluate) spline point: Quadratic Bezier
+GetSplinePointCatmullRom	function	5	0	raylib.h	1332	I Vector2 GetSplinePointCatmullRom(Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4, float t); // Get (evaluate) spline point: Catmull-Rom
+GetSplinePointLinear	function	3	0	raylib.h	1330	I Vector2 GetSplinePointLinear(Vector2 startPos, Vector2 endPos, float t); // Get (evaluate) spline point: Linear
+GetTextBetween	function	3	0	raylib.h	1544	I char *GetTextBetween(const char *text, const char *begin, const char *end); // Get text between two strings
+GetTime	function	0	0	raylib.h	1096	I double GetTime(void); // Get elapsed time in seconds since InitWindow()
+GetTouchPointCount	function	0	0	raylib.h	1244	I int GetTouchPointCount(void); // Get number of touch points
+GetTouchPointId	function	1	0	raylib.h	1243	I int GetTouchPointId(int index); // Get touch point identifier for given index
+GetTouchPosition	function	1	0	raylib.h	1242	I Vector2 GetTouchPosition(int index); // Get touch position XY for a touch point index (relative to screen size)
+GetTouchX	function	0	0	raylib.h	1240	I int GetTouchX(void); // Get touch position X for touch point 0 (relative to screen size)
+GetTouchY	function	0	0	raylib.h	1241	I int GetTouchY(void); // Get touch position Y for touch point 0 (relative to screen size)
+GetWindowHandle	function	0	0	raylib.h	1016	I void *GetWindowHandle(void); // Get native window handle
+GetWindowPosition	function	0	0	raylib.h	1029	I Vector2 GetWindowPosition(void); // Get window position XY on monitor
+GetWindowScaleDPI	function	0	0	raylib.h	1030	I Vector2 GetWindowScaleDPI(void); // Get window scale DPI factor
+GetWorkingDirectory	function	0	0	raylib.h	1160	I const char *GetWorkingDirectory(void); // Get current working directory (uses static string)
+GetWorldToScreen	function	2	0	raylib.h	1086	I Vector2 GetWorldToScreen(Vector3 position, Camera camera); // Get screen space position for a 3d world space position
+GetWorldToScreen2D	function	2	0	raylib.h	1088	I Vector2 GetWorldToScreen2D(Vector2 position, Camera2D camera); // Get screen space position for a 2d camera world space position
+GetWorldToScreenEx	function	4	0	raylib.h	1087	I Vector2 GetWorldToScreenEx(Vector3 position, Camera camera, int width, int height); // Get sized screen space position for a 3d world space position
+GlyphInfo	typedef_struct	-1	0	raylib.h	308	t GlyphInfo {
+HideCursor	function	0	0	raylib.h	1040	I void HideCursor(void); // Hide cursor
+Image	typedef_struct	-1	0	raylib.h	264	t Image {
+ImageAlphaClear	function	3	0	raylib.h	1389	I void ImageAlphaClear(Image *image, Color color, float threshold); // Clear alpha channel to desired color
+ImageAlphaCrop	function	2	0	raylib.h	1388	I void ImageAlphaCrop(Image *image, float threshold); // Crop image depending on alpha value
+ImageAlphaMask	function	2	0	raylib.h	1390	I void ImageAlphaMask(Image *image, Image alphaMask); // Apply alpha mask to image
+ImageAlphaPremultiply	function	1	0	raylib.h	1391	I void ImageAlphaPremultiply(Image *image); // Premultiply alpha channel
+ImageBlurGaussian	function	2	0	raylib.h	1392	I void ImageBlurGaussian(Image *image, int blurSize); // Apply Gaussian blur using a box blur approximation
+ImageClearBackground	function	2	0	raylib.h	1419	I void ImageClearBackground(Image *dst, Color color); // Clear image background with given color
+ImageColorBrightness	function	2	0	raylib.h	1408	I void ImageColorBrightness(Image *image, int brightness); // Modify image color: brightness (-255 to 255)
+ImageColorContrast	function	2	0	raylib.h	1407	I void ImageColorContrast(Image *image, int contrast); // Modify image color: contrast (-100 to 100)
+ImageColorGrayscale	function	1	0	raylib.h	1406	I void ImageColorGrayscale(Image *image); // Modify image color: grayscale
+ImageColorInvert	function	1	0	raylib.h	1405	I void ImageColorInvert(Image *image); // Modify image color: invert
+ImageColorReplace	function	3	0	raylib.h	1409	I void ImageColorReplace(Image *image, Color color, Color replace); // Modify image color: replace color
+ImageColorTint	function	2	0	raylib.h	1404	I void ImageColorTint(Image *image, Color color); // Modify image color: tint
+ImageCopy	function	1	0	raylib.h	1380	I Image ImageCopy(Image image); // Create an image duplicate (useful for transformations)
+ImageCrop	function	2	0	raylib.h	1387	I void ImageCrop(Image *image, Rectangle crop); // Crop an image to a defined rectangle
+ImageDither	function	5	0	raylib.h	1398	I void ImageDither(Image *image, int rBpp, int gBpp, int bBpp, int aBpp); // Dither image data to 16bpp or lower (Floyd-Steinberg dithering)
+ImageDraw	function	5	0	raylib.h	1439	I void ImageDraw(Image *dst, Image src, Rectangle srcRec, Rectangle dstRec, Color tint); // Draw a source image within a destination image (tint applied to source)
+ImageDrawCircle	function	5	0	raylib.h	1425	I void ImageDrawCircle(Image *dst, int centerX, int centerY, int radius, Color color); // Draw a filled circle within an image
+ImageDrawCircleLines	function	5	0	raylib.h	1427	I void ImageDrawCircleLines(Image *dst, int centerX, int centerY, int radius, Color color); // Draw circle outline within an image
+ImageDrawCircleLinesV	function	4	0	raylib.h	1428	I void ImageDrawCircleLinesV(Image *dst, Vector2 center, int radius, Color color); // Draw circle outline within an image (Vector version)
+ImageDrawCircleV	function	4	0	raylib.h	1426	I void ImageDrawCircleV(Image *dst, Vector2 center, int radius, Color color); // Draw a filled circle within an image (Vector version)
+ImageDrawLine	function	6	0	raylib.h	1422	I void ImageDrawLine(Image *dst, int startPosX, int startPosY, int endPosX, int endPosY, Color color); // Draw line within an image
+ImageDrawLineEx	function	5	0	raylib.h	1424	I void ImageDrawLineEx(Image *dst, Vector2 start, Vector2 end, int thick, Color color); // Draw a line defining thickness within an image
+ImageDrawLineV	function	4	0	raylib.h	1423	I void ImageDrawLineV(Image *dst, Vector2 start, Vector2 end, Color color); // Draw line within an image (Vector version)
+ImageDrawPixel	function	4	0	raylib.h	1420	I void ImageDrawPixel(Image *dst, int posX, int posY, Color color); // Draw pixel within an image
+ImageDrawPixelV	function	3	0	raylib.h	1421	I void ImageDrawPixelV(Image *dst, Vector2 position, Color color); // Draw pixel within an image (Vector version)
+ImageDrawRectangle	function	6	0	raylib.h	1429	I void ImageDrawRectangle(Image *dst, int posX, int posY, int width, int height, Color color); // Draw rectangle within an image
+ImageDrawRectangleLines	function	6	0	raylib.h	1432	I void ImageDrawRectangleLines(Image *dst, int posX, int posY, int width, int height, Color color); // Draw rectangle lines within an image
+ImageDrawRectangleLinesEx	function	4	0	raylib.h	1433	I void ImageDrawRectangleLinesEx(Image *dst, Rectangle rec, int thick, Color color); // Draw rectangle lines within an image with extended parameters
+ImageDrawRectangleRec	function	3	0	raylib.h	1431	I void ImageDrawRectangleRec(Image *dst, Rectangle rec, Color color); // Draw rectangle within an image
+ImageDrawRectangleV	function	4	0	raylib.h	1430	I void ImageDrawRectangleV(Image *dst, Vector2 position, Vector2 size, Color color); // Draw rectangle within an image (Vector version)
+ImageDrawText	function	6	0	raylib.h	1440	I void ImageDrawText(Image *dst, const char *text, int posX, int posY, int fontSize, Color color); // Draw text (using default font) within an image (destination)
+ImageDrawTextEx	function	7	0	raylib.h	1441	I void ImageDrawTextEx(Image *dst, Font font, const char *text, Vector2 position, float fontSize, float spacing, Color tint); // Draw text (custom sprite font) within an image (destination)
+ImageDrawTriangle	function	5	0	raylib.h	1434	I void ImageDrawTriangle(Image *dst, Vector2 v1, Vector2 v2, Vector2 v3, Color color); // Draw triangle within an image
+ImageDrawTriangleFan	function	4	0	raylib.h	1437	I void ImageDrawTriangleFan(Image *dst, const Vector2 *points, int pointCount, Color color); // Draw a triangle fan defined by points within an image (first vertex is the center)
+ImageDrawTriangleGradient	function	7	0	raylib.h	1435	I void ImageDrawTriangleGradient(Image *dst, Vector2 v1, Vector2 v2, Vector2 v3, Color c1, Color c2, Color c3); // Draw triangle with interpolated colors within an image
+ImageDrawTriangleLines	function	5	0	raylib.h	1436	I void ImageDrawTriangleLines(Image *dst, Vector2 v1, Vector2 v2, Vector2 v3, Color color); // Draw triangle outline within an image
+ImageDrawTriangleStrip	function	4	0	raylib.h	1438	I void ImageDrawTriangleStrip(Image *dst, const Vector2 *points, int pointCount, Color color); // Draw a triangle strip defined by points within an image
+ImageFlipHorizontal	function	1	0	raylib.h	1400	I void ImageFlipHorizontal(Image *image); // Flip image horizontally
+ImageFlipVertical	function	1	0	raylib.h	1399	I void ImageFlipVertical(Image *image); // Flip image vertically
+ImageFormat	function	2	0	raylib.h	1385	I void ImageFormat(Image *image, int newFormat); // Convert image data to desired format
+ImageFromChannel	function	2	0	raylib.h	1382	I Image ImageFromChannel(Image image, int selectedChannel); // Create an image from a selected channel of another image (GRAYSCALE)
+ImageFromImage	function	2	0	raylib.h	1381	I Image ImageFromImage(Image image, Rectangle rec); // Create an image from another image piece
+ImageKernelConvolution	function	3	0	raylib.h	1393	I void ImageKernelConvolution(Image *image, const float *kernel, int kernelSize); // Apply custom square convolution kernel to image
+ImageMipmaps	function	1	0	raylib.h	1397	I void ImageMipmaps(Image *image); // Compute all mipmap levels for a provided image
+ImageResize	function	3	0	raylib.h	1394	I void ImageResize(Image *image, int newWidth, int newHeight); // Resize image (Bicubic scaling algorithm)
+ImageResizeCanvas	function	6	0	raylib.h	1396	I void ImageResizeCanvas(Image *image, int newWidth, int newHeight, int offsetX, int offsetY, Color fill); // Resize canvas and fill with color
+ImageResizeNN	function	3	0	raylib.h	1395	I void ImageResizeNN(Image *image, int newWidth, int newHeight); // Resize image (Nearest-Neighbor scaling algorithm)
+ImageRotate	function	2	0	raylib.h	1401	I void ImageRotate(Image *image, int degrees); // Rotate image by input angle in degrees (-359 to 359)
+ImageRotateCCW	function	1	0	raylib.h	1403	I void ImageRotateCCW(Image *image); // Rotate image counter-clockwise 90deg
+ImageRotateCW	function	1	0	raylib.h	1402	I void ImageRotateCW(Image *image); // Rotate image clockwise 90deg
+ImageText	function	3	0	raylib.h	1383	I Image ImageText(const char *text, int fontSize, Color color); // Create an image from text (default font)
+ImageTextEx	function	5	0	raylib.h	1384	I Image ImageTextEx(Font font, const char *text, float fontSize, float spacing, Color tint); // Create an image from text (custom sprite font)
+ImageToPOT	function	2	0	raylib.h	1386	I void ImageToPOT(Image *image, Color fill); // Convert image to POT (power-of-two)
+InitAudioDevice	function	0	0	raylib.h	1666	I void InitAudioDevice(void); // Initialize audio device and context
+InitWindow	function	3	0	raylib.h	988	I void InitWindow(int width, int height, const char *title); // Initialize window and OpenGL context
+IsAudioDeviceReady	function	0	0	raylib.h	1668	I bool IsAudioDeviceReady(void); // Check if audio device has been initialized successfully
+IsAudioStreamPlaying	function	1	0	raylib.h	1729	I bool IsAudioStreamPlaying(AudioStream stream); // Check if audio stream is playing
+IsAudioStreamProcessed	function	1	0	raylib.h	1725	I bool IsAudioStreamProcessed(AudioStream stream); // Check if any audio stream buffers requires refill
+IsAudioStreamValid	function	1	0	raylib.h	1722	I bool IsAudioStreamValid(AudioStream stream); // Check if an audio stream is valid (buffers initialized)
+IsCursorHidden	function	0	0	raylib.h	1041	I bool IsCursorHidden(void); // Check if cursor is not visible
+IsCursorOnScreen	function	0	0	raylib.h	1044	I bool IsCursorOnScreen(void); // Check if cursor is on the screen
+IsFileDropped	function	0	0	raylib.h	1169	I bool IsFileDropped(void); // Check if file has been dropped into window
+IsFileExtension	function	2	0	raylib.h	1152	I bool IsFileExtension(const char *fileName, const char *ext); // Check file extension (recommended include point: .png, .wav)
+IsFileNameValid	function	1	0	raylib.h	1165	I bool IsFileNameValid(const char *fileName); // Check if fileName is valid for the platform/OS
+IsFontValid	function	1	0	raylib.h	1498	I bool IsFontValid(Font font); // Check if font is valid (font data loaded, WARNING: GPU texture not checked)
+IsGamepadAvailable	function	1	0	raylib.h	1211	I bool IsGamepadAvailable(int gamepad); // Check if gamepad is available
+IsGamepadButtonDown	function	2	0	raylib.h	1214	I bool IsGamepadButtonDown(int gamepad, int button); // Check if gamepad button is being pressed
+IsGamepadButtonPressed	function	2	0	raylib.h	1213	I bool IsGamepadButtonPressed(int gamepad, int button); // Check if gamepad button has been pressed once
+IsGamepadButtonReleased	function	2	0	raylib.h	1215	I bool IsGamepadButtonReleased(int gamepad, int button); // Check if gamepad button has been released once
+IsGamepadButtonUp	function	2	0	raylib.h	1216	I bool IsGamepadButtonUp(int gamepad, int button); // Check if gamepad button is NOT being pressed
+IsGestureDetected	function	1	0	raylib.h	1250	I bool IsGestureDetected(unsigned int gesture); // Check if gesture has been detected
+IsImageValid	function	1	0	raylib.h	1362	I bool IsImageValid(Image image); // Check if an image is valid (data and parameters)
+IsKeyDown	function	1	0	raylib.h	1202	I bool IsKeyDown(int key); // Check if key is being pressed
+IsKeyPressed	function	1	0	raylib.h	1200	I bool IsKeyPressed(int key); // Check if key has been pressed once
+IsKeyPressedRepeat	function	1	0	raylib.h	1201	I bool IsKeyPressedRepeat(int key); // Check if key has been pressed again
+IsKeyReleased	function	1	0	raylib.h	1203	I bool IsKeyReleased(int key); // Check if key has been released once
+IsKeyUp	function	1	0	raylib.h	1204	I bool IsKeyUp(int key); // Check if key is NOT being pressed
+IsMaterialValid	function	1	0	raylib.h	1638	I bool IsMaterialValid(Material material); // Check if material is valid (shader assigned, map textures loaded in GPU)
+IsModelAnimationValid	function	2	0	raylib.h	1648	I bool IsModelAnimationValid(Model model, ModelAnimation anim); // Check model animation skeleton match
+IsModelValid	function	1	0	raylib.h	1597	I bool IsModelValid(Model model); // Check if model is valid (loaded in GPU, VAO/VBOs)
+IsMouseButtonDown	function	1	0	raylib.h	1225	I bool IsMouseButtonDown(int button); // Check if mouse button is being pressed
+IsMouseButtonPressed	function	1	0	raylib.h	1224	I bool IsMouseButtonPressed(int button); // Check if mouse button has been pressed once
+IsMouseButtonReleased	function	1	0	raylib.h	1226	I bool IsMouseButtonReleased(int button); // Check if mouse button has been released once
+IsMouseButtonUp	function	1	0	raylib.h	1227	I bool IsMouseButtonUp(int button); // Check if mouse button is NOT being pressed
+IsMusicStreamPlaying	function	1	0	raylib.h	1708	I bool IsMusicStreamPlaying(Music music); // Check if music is playing
+IsMusicValid	function	1	0	raylib.h	1705	I bool IsMusicValid(Music music); // Check if music stream is valid (context and buffers initialized)
+IsPathFile	function	1	0	raylib.h	1164	I bool IsPathFile(const char *path); // Check if given path is a file or a directory
+IsRenderTextureValid	function	1	0	raylib.h	1451	I bool IsRenderTextureValid(RenderTexture2D target); // Check if render texture is valid (loaded in GPU)
+IsShaderValid	function	1	0	raylib.h	1073	I bool IsShaderValid(Shader shader); // Check if shader is valid (loaded on GPU)
+IsSoundPlaying	function	1	0	raylib.h	1692	I bool IsSoundPlaying(Sound sound); // Check if sound is currently playing
+IsSoundValid	function	1	0	raylib.h	1679	I bool IsSoundValid(Sound sound); // Check if sound is valid (data loaded and buffers initialized)
+IsTextureValid	function	1	0	raylib.h	1449	I bool IsTextureValid(Texture2D texture); // Check if texture is valid (loaded in GPU)
+IsWaveValid	function	1	0	raylib.h	1675	I bool IsWaveValid(Wave wave); // Check if wave data is valid (data loaded and parameters)
+IsWindowFocused	function	0	0	raylib.h	996	I bool IsWindowFocused(void); // Check if window is currently focused
+IsWindowFullscreen	function	0	0	raylib.h	992	I bool IsWindowFullscreen(void); // Check if window is currently fullscreen
+IsWindowHidden	function	0	0	raylib.h	993	I bool IsWindowHidden(void); // Check if window is currently hidden
+IsWindowMaximized	function	0	0	raylib.h	995	I bool IsWindowMaximized(void); // Check if window is currently maximized
+IsWindowMinimized	function	0	0	raylib.h	994	I bool IsWindowMinimized(void); // Check if window is currently minimized
+IsWindowReady	function	0	0	raylib.h	991	I bool IsWindowReady(void); // Check if window has been initialized successfully
+IsWindowResized	function	0	0	raylib.h	997	I bool IsWindowResized(void); // Check if window has been resized last frame
+IsWindowState	function	1	0	raylib.h	998	I bool IsWindowState(unsigned int flag); // Check if one specific window flag is enabled
+KeyboardKey	typedef_enum	-1	0	raylib.h	589	m {
+Lerp	function	3	0	raymath.h	227	I float Lerp(float start, float end, float amount)
+LoadAudioStream	function	3	0	raylib.h	1721	I AudioStream LoadAudioStream(unsigned int sampleRate, unsigned int sampleSize, unsigned int channels); // Load audio stream (to stream raw audio pcm data)
+LoadAutomationEventList	function	1	0	raylib.h	1186	I AutomationEventList LoadAutomationEventList(const char *fileName); // Load automation events list from file, NULL for empty list, capacity = MAX_AUTOMATION_EVENTS
+LoadCodepoints	function	2	0	raylib.h	1525	I int *LoadCodepoints(const char *text, int *count); // Load all codepoints from a UTF-8 text string, codepoints count returned by parameter
+LoadDirectoryFiles	function	1	0	raylib.h	1166	I FilePathList LoadDirectoryFiles(const char *dirPath); // Load directory filepaths, files and directories, no subdirs scan
+LoadDirectoryFilesEx	function	3	0	raylib.h	1167	I FilePathList LoadDirectoryFilesEx(const char *basePath, const char *filter, bool scanSubdirs); // Load directory filepaths with extension filtering and subdir scan; some filters available: '*.*','FILES*','DIRS*'
+LoadDroppedFiles	function	0	0	raylib.h	1170	I FilePathList LoadDroppedFiles(void); // Load dropped filepaths
+LoadFileData	function	2	0	raylib.h	1129	I unsigned char *LoadFileData(const char *fileName, int *dataSize); // Load file data as byte array (read)
+LoadFileDataCallback	typedef_alias	-1	0	raylib.h	969	d char *(*LoadFileDataCallback)(const char *fileName, int *dataSize); // FileIO: Load binary data
+LoadFileText	function	1	0	raylib.h	1133	I char *LoadFileText(const char *fileName); // Load text data from file (read), returns a '\0' terminated string
+LoadFileTextCallback	typedef_alias	-1	0	raylib.h	971	r *(*LoadFileTextCallback)(const char *fileName); // FileIO: Load text data
+LoadFont	function	1	0	raylib.h	1494	I Font LoadFont(const char *fileName); // Load font from file into GPU memory (VRAM)
+LoadFontData	function	7	0	raylib.h	1499	I GlyphInfo *LoadFontData(const unsigned char *fileData, int dataSize, int fontSize, const int *codepoints, int codepointCount, int type, int *glyphCount); // Load font data for further use
+LoadFontEx	function	4	0	raylib.h	1495	I Font LoadFontEx(const char *fileName, int fontSize, const int *codepoints, int codepointCount); // Load font from file with extended parameters, use NULL for codepoints and 0 for codepointCount to load the default character set, font size is provided in pixels height
+LoadFontFromImage	function	3	0	raylib.h	1496	I Font LoadFontFromImage(Image image, Color key, int firstChar); // Load font from Image (XNA style)
+LoadFontFromMemory	function	6	0	raylib.h	1497	I Font LoadFontFromMemory(const char *fileType, const unsigned char *fileData, int dataSize, int fontSize, const int *codepoints, int codepointCount); // Load font from memory buffer, fileType refers to extension: i.e. '.ttf'
+LoadImage	function	1	0	raylib.h	1355	I Image LoadImage(const char *fileName); // Load image from file into CPU memory (RAM)
+LoadImageAnim	function	2	0	raylib.h	1357	I Image LoadImageAnim(const char *fileName, int *frames); // Load image sequence from file (frames appended to image.data)
+LoadImageAnimFromMemory	function	4	0	raylib.h	1358	I Image LoadImageAnimFromMemory(const char *fileType, const unsigned char *fileData, int dataSize, int *frames); // Load image sequence from memory buffer
+LoadImageColors	function	1	0	raylib.h	1410	I Color *LoadImageColors(Image image); // Load color data from image as a Color array (RGBA - 32bit)
+LoadImageFromMemory	function	3	0	raylib.h	1359	I Image LoadImageFromMemory(const char *fileType, const unsigned char *fileData, int dataSize); // Load image from memory buffer, fileType refers to extension: i.e. '.png'
+LoadImageFromScreen	function	0	0	raylib.h	1361	I Image LoadImageFromScreen(void); // Load image from screen buffer (screenshot)
+LoadImageFromTexture	function	1	0	raylib.h	1360	I Image LoadImageFromTexture(Texture2D texture); // Load image from GPU texture data
+LoadImagePalette	function	3	0	raylib.h	1411	I Color *LoadImagePalette(Image image, int maxPaletteSize, int *colorCount); // Load colors palette from image as a Color array (RGBA - 32bit)
+LoadImageRaw	function	5	0	raylib.h	1356	I Image LoadImageRaw(const char *fileName, int width, int height, int format, int headerSize); // Load image from RAW file data
+LoadMaterialDefault	function	0	0	raylib.h	1637	I Material LoadMaterialDefault(void); // Load default material (Supports: DIFFUSE, SPECULAR, NORMAL maps)
+LoadMaterials	function	2	0	raylib.h	1636	I Material *LoadMaterials(const char *fileName, int *materialCount); // Load materials from model file
+LoadModel	function	1	0	raylib.h	1595	I Model LoadModel(const char *fileName); // Load model from files (meshes and materials)
+LoadModelAnimations	function	2	0	raylib.h	1644	I ModelAnimation *LoadModelAnimations(const char *fileName, int *animCount); // Load model animations from file
+LoadModelFromMesh	function	1	0	raylib.h	1596	I Model LoadModelFromMesh(Mesh mesh); // Load model from generated mesh (default material)
+LoadMusicStream	function	1	0	raylib.h	1703	I Music LoadMusicStream(const char *fileName); // Load music stream from file
+LoadMusicStreamFromMemory	function	3	0	raylib.h	1704	I Music LoadMusicStreamFromMemory(const char *fileType, const unsigned char *data, int dataSize); // Load music stream from data
+LoadRandomSequence	function	3	0	raylib.h	1110	I int *LoadRandomSequence(unsigned int count, int min, int max); // Load random values sequence, no values repeated
+LoadRenderTexture	function	2	0	raylib.h	1448	I RenderTexture2D LoadRenderTexture(int width, int height); // Load texture for rendering (framebuffer)
+LoadShader	function	2	0	raylib.h	1071	I Shader LoadShader(const char *vsFileName, const char *fsFileName); // Load shader from files and bind default locations
+LoadShaderFromMemory	function	2	0	raylib.h	1072	I Shader LoadShaderFromMemory(const char *vsCode, const char *fsCode); // Load shader from code strings and bind default locations
+LoadSound	function	1	0	raylib.h	1676	I Sound LoadSound(const char *fileName); // Load sound from file
+LoadSoundAlias	function	1	0	raylib.h	1678	I Sound LoadSoundAlias(Sound source); // Load sound alias, new sound that shares the same sample data as the source sound, does not own the sound data
+LoadSoundFromWave	function	1	0	raylib.h	1677	I Sound LoadSoundFromWave(Wave wave); // Load sound from wave data
+LoadTextLines	function	2	0	raylib.h	1536	I char **LoadTextLines(const char *text, int *count); // Load text as separate lines ('\n')
+LoadTexture	function	1	0	raylib.h	1445	I Texture2D LoadTexture(const char *fileName); // Load texture from file into GPU memory (VRAM)
+LoadTextureCubemap	function	2	0	raylib.h	1447	I TextureCubemap LoadTextureCubemap(Image image, int layout); // Load cubemap from image, multiple image cubemap layouts supported
+LoadTextureFromImage	function	1	0	raylib.h	1446	I Texture2D LoadTextureFromImage(Image image); // Load texture from image data
+LoadUTF8	function	2	0	raylib.h	1523	I char *LoadUTF8(const int *codepoints, int length); // Load UTF-8 text encoded from codepoints array
+LoadVrStereoConfig	function	1	0	raylib.h	1066	I VrStereoConfig LoadVrStereoConfig(VrDeviceInfo device); // Load VR stereo config for VR simulator device parameters
+LoadWave	function	1	0	raylib.h	1673	I Wave LoadWave(const char *fileName); // Load wave data from file
+LoadWaveFromMemory	function	3	0	raylib.h	1674	I Wave LoadWaveFromMemory(const char *fileType, const unsigned char *fileData, int dataSize); // Load wave from memory buffer, fileType refers to extension: i.e. '.wav'
+LoadWaveSamples	function	1	0	raylib.h	1699	I float *LoadWaveSamples(Wave wave); // Load samples data from wave as a 32bit float data array
+MakeDirectory	function	1	0	raylib.h	1162	I int MakeDirectory(const char *dirPath); // Create directories (including full path requested), returns 0 on success
+Material	typedef_struct	-1	0	raylib.h	388	t Material {
+MaterialMap	typedef_struct	-1	0	raylib.h	381	t MaterialMap {
+MaterialMapIndex	typedef_enum	-1	0	raylib.h	770	m {
+Matrix	typedef_struct	-1	0	raylib.h	240	t Matrix {
+MatrixAdd	function	2	0	raymath.h	1632	I Matrix MatrixAdd(Matrix left, Matrix right)
+MatrixCompose	function	3	0	raymath.h	2659	I Matrix MatrixCompose(Vector3 translation, Quaternion rotation, Vector3 scale)
+MatrixDecompose	function	4	0	raymath.h	2690	I void MatrixDecompose(Matrix mat, Vector3 *translation, Quaternion *rotation, Vector3 *scale)
+MatrixDeterminant	function	1	0	raymath.h	1504	I float MatrixDeterminant(Matrix mat)
+MatrixFrustum	function	6	0	raymath.h	1974	I Matrix MatrixFrustum(double left, double right, double bottom, double top, double nearPlane, double farPlane)
+MatrixIdentity	function	0	0	raymath.h	1621	I Matrix MatrixIdentity(void)
+MatrixInvert	function	1	0	raymath.h	1574	I Matrix MatrixInvert(Matrix mat)
+MatrixLookAt	function	3	0	raymath.h	2062	I Matrix MatrixLookAt(Vector3 eye, Vector3 target, Vector3 up)
+MatrixMultiply	function	2	0	raymath.h	1683	I Matrix MatrixMultiply(Matrix left, Matrix right)
+MatrixMultiplyValue	function	2	0	raymath.h	1766	I Matrix MatrixMultiplyValue(Matrix left, float value)
+MatrixOrtho	function	6	0	raymath.h	2033	I Matrix MatrixOrtho(double left, double right, double bottom, double top, double nearPlane, double farPlane)
+MatrixPerspective	function	4	0	raymath.h	2007	I Matrix MatrixPerspective(double fovY, double aspect, double nearPlane, double farPlane)
+MatrixRotate	function	2	0	raymath.h	1791	I Matrix MatrixRotate(Vector3 axis, float angle)
+MatrixRotateX	function	1	0	raymath.h	1836	I Matrix MatrixRotateX(float angle)
+MatrixRotateXYZ	function	1	0	raymath.h	1897	I Matrix MatrixRotateXYZ(Vector3 angle)
+MatrixRotateY	function	1	0	raymath.h	1856	I Matrix MatrixRotateY(float angle)
+MatrixRotateZ	function	1	0	raymath.h	1876	I Matrix MatrixRotateZ(float angle)
+MatrixRotateZYX	function	1	0	raymath.h	1928	I Matrix MatrixRotateZYX(Vector3 angle)
+MatrixScale	function	3	0	raymath.h	1963	I Matrix MatrixScale(float x, float y, float z)
+MatrixSubtract	function	2	0	raymath.h	1657	I Matrix MatrixSubtract(Matrix left, Matrix right)
+MatrixToFloatV	function	1	0	raymath.h	2117	I float16 MatrixToFloatV(Matrix mat)
+MatrixTrace	function	1	0	raymath.h	1541	I float MatrixTrace(Matrix mat)
+MatrixTranslate	function	3	0	raymath.h	1779	I Matrix MatrixTranslate(float x, float y, float z)
+MatrixTranspose	function	1	0	raymath.h	1549	I Matrix MatrixTranspose(Matrix mat)
+MaximizeWindow	function	0	0	raylib.h	1003	I void MaximizeWindow(void); // Set window state: maximized, if resizable
+MeasureText	function	2	0	raylib.h	1515	I int MeasureText(const char *text, int fontSize); // Measure string width for default font
+MeasureTextCodepoints	function	5	0	raylib.h	1517	I Vector2 MeasureTextCodepoints(Font font, const int *codepoints, int length, float fontSize, float spacing); // Measure string size for an existing array of codepoints for Font
+MeasureTextEx	function	4	0	raylib.h	1516	I Vector2 MeasureTextEx(Font font, const char *text, float fontSize, float spacing); // Measure string size for Font
+MemAlloc	function	1	0	raylib.h	1124	I void *MemAlloc(unsigned int size); // Internal memory allocator
+MemFree	function	1	0	raylib.h	1126	I void MemFree(void *ptr); // Internal memory free
+MemRealloc	function	2	0	raylib.h	1125	I void *MemRealloc(void *ptr, unsigned int size); // Internal memory reallocator
+Mesh	typedef_struct	-1	0	raylib.h	346	t Mesh {
+MinimizeWindow	function	0	0	raylib.h	1004	I void MinimizeWindow(void); // Set window state: minimized, if resizable
+Model	typedef_struct	-1	0	raylib.h	418	t Model {
+ModelAnimPose	typedef_alias	-1	0	raylib.h	402	m *ModelAnimPose;
+ModelAnimation	typedef_struct	-1	0	raylib.h	436	t ModelAnimation {
+ModelSkeleton	typedef_struct	-1	0	raylib.h	411	t ModelSkeleton {
+MouseButton	typedef_enum	-1	0	raylib.h	712	m {
+MouseCursor	typedef_enum	-1	0	raylib.h	723	m {
+Music	typedef_struct	-1	0	raylib.h	495	t Music {
+NPatchInfo	typedef_struct	-1	0	raylib.h	298	t NPatchInfo {
+NPatchLayout	typedef_enum	-1	0	raylib.h	960	m {
+Normalize	function	3	0	raymath.h	235	I float Normalize(float value, float start, float end)
+OpenURL	function	1	0	raylib.h	1116	I void OpenURL(const char *url); // Open URL with default system browser (if available)
+PauseAudioStream	function	1	0	raylib.h	1727	I void PauseAudioStream(AudioStream stream); // Pause audio stream
+PauseMusicStream	function	1	0	raylib.h	1711	I void PauseMusicStream(Music music); // Pause music playing
+PauseSound	function	1	0	raylib.h	1690	I void PauseSound(Sound sound); // Pause a sound
+PixelFormat	typedef_enum	-1	0	raylib.h	853	m {
+PlayAudioStream	function	1	0	raylib.h	1726	I void PlayAudioStream(AudioStream stream); // Play audio stream
+PlayAutomationEvent	function	1	0	raylib.h	1193	I void PlayAutomationEvent(AutomationEvent event); // Play a recorded automation event
+PlayMusicStream	function	1	0	raylib.h	1707	I void PlayMusicStream(Music music); // Start music playing
+PlaySound	function	1	0	raylib.h	1688	I void PlaySound(Sound sound); // Play a sound
+PollInputEvents	function	0	0	raylib.h	1104	I void PollInputEvents(void); // Register all input events
+Quaternion	typedef_alias	-1	0	raylib.h	237	4 Quaternion;
+QuaternionAdd	function	2	0	raymath.h	2146	I Quaternion QuaternionAdd(Quaternion q1, Quaternion q2)
+QuaternionAddValue	function	2	0	raymath.h	2154	I Quaternion QuaternionAddValue(Quaternion q, float add)
+QuaternionCubicHermiteSpline	function	5	0	raymath.h	2353	I Quaternion QuaternionCubicHermiteSpline(Quaternion q1, Quaternion outTangent1, Quaternion q2, Quaternion inTangent2, float t)
+QuaternionDivide	function	2	0	raymath.h	2260	I Quaternion QuaternionDivide(Quaternion q1, Quaternion q2)
+QuaternionEquals	function	2	0	raymath.h	2639	I int QuaternionEquals(Quaternion p, Quaternion q)
+QuaternionFromAxisAngle	function	2	0	raymath.h	2504	I Quaternion QuaternionFromAxisAngle(Vector3 axis, float angle)
+QuaternionFromEuler	function	3	0	raymath.h	2581	I Quaternion QuaternionFromEuler(float pitch, float yaw, float roll)
+QuaternionFromMatrix	function	1	0	raymath.h	2406	I Quaternion QuaternionFromMatrix(Matrix mat)
+QuaternionFromVector3ToVector3	function	2	0	raymath.h	2378	I Quaternion QuaternionFromVector3ToVector3(Vector3 from, Vector3 to)
+QuaternionIdentity	function	0	0	raymath.h	2178	I Quaternion QuaternionIdentity(void)
+QuaternionInvert	function	1	0	raymath.h	2211	I Quaternion QuaternionInvert(Quaternion q)
+QuaternionLength	function	1	0	raymath.h	2186	I float QuaternionLength(Quaternion q)
+QuaternionLerp	function	3	0	raymath.h	2268	I Quaternion QuaternionLerp(Quaternion q1, Quaternion q2, float amount)
+QuaternionMultiply	function	2	0	raymath.h	2231	I Quaternion QuaternionMultiply(Quaternion q1, Quaternion q2)
+QuaternionNlerp	function	3	0	raymath.h	2281	I Quaternion QuaternionNlerp(Quaternion q1, Quaternion q2, float amount)
+QuaternionNormalize	function	1	0	raymath.h	2194	I Quaternion QuaternionNormalize(Quaternion q)
+QuaternionScale	function	2	0	raymath.h	2247	I Quaternion QuaternionScale(Quaternion q, float mul)
+QuaternionSlerp	function	3	0	raymath.h	2306	I Quaternion QuaternionSlerp(Quaternion q1, Quaternion q2, float amount)
+QuaternionSubtract	function	2	0	raymath.h	2162	I Quaternion QuaternionSubtract(Quaternion q1, Quaternion q2)
+QuaternionSubtractValue	function	2	0	raymath.h	2170	I Quaternion QuaternionSubtractValue(Quaternion q, float sub)
+QuaternionToAxisAngle	function	3	0	raymath.h	2543	I void QuaternionToAxisAngle(Quaternion q, Vector3 *outAxis, float *outAngle)
+QuaternionToEuler	function	1	0	raymath.h	2602	I Vector3 QuaternionToEuler(Quaternion q)
+QuaternionToMatrix	function	1	0	raymath.h	2470	I Matrix QuaternionToMatrix(Quaternion q)
+QuaternionTransform	function	2	0	raymath.h	2626	I Quaternion QuaternionTransform(Quaternion q, Matrix mat)
+Ray	typedef_struct	-1	0	raylib.h	445	t Ray {
+RayCollision	typedef_struct	-1	0	raylib.h	451	t RayCollision {
+Rectangle	typedef_struct	-1	0	raylib.h	256	t Rectangle {
+Remap	function	5	0	raymath.h	243	I float Remap(float value, float inputStart, float inputEnd, float outputStart, float outputEnd)
+RenderTexture	typedef_struct	-1	0	raylib.h	288	t RenderTexture {
+RenderTexture2D	typedef_alias	-1	0	raylib.h	295	e RenderTexture2D;
+RestoreWindow	function	0	0	raylib.h	1005	I void RestoreWindow(void); // Restore window from being minimized/maximized
+ResumeAudioStream	function	1	0	raylib.h	1728	I void ResumeAudioStream(AudioStream stream); // Resume audio stream
+ResumeMusicStream	function	1	0	raylib.h	1712	I void ResumeMusicStream(Music music); // Resume playing paused music
+ResumeSound	function	1	0	raylib.h	1691	I void ResumeSound(Sound sound); // Resume a paused sound
+SaveFileData	function	3	0	raylib.h	1131	I bool SaveFileData(const char *fileName, const void *data, int dataSize); // Save data to file from byte array (write), returns true on success
+SaveFileDataCallback	typedef_alias	-1	0	raylib.h	970	l (*SaveFileDataCallback)(const char *fileName, const void *data, int dataSize); // FileIO: Save binary data
+SaveFileText	function	2	0	raylib.h	1135	I bool SaveFileText(const char *fileName, const char *text); // Save text data to file (write), string must be '\0' terminated, returns true on success
+SaveFileTextCallback	typedef_alias	-1	0	raylib.h	972	l (*SaveFileTextCallback)(const char *fileName, const char *text); // FileIO: Save text data
+SeekMusicStream	function	2	0	raylib.h	1713	I void SeekMusicStream(Music music, float position); // Seek music to a position (in seconds)
+SetAudioStreamBufferSizeDefault	function	1	0	raylib.h	1734	I void SetAudioStreamBufferSizeDefault(int size); // Default size for new audio streams
+SetAudioStreamCallback	function	2	0	raylib.h	1735	I void SetAudioStreamCallback(AudioStream stream, AudioCallback callback); // Audio thread callback to request new data
+SetAudioStreamPan	function	2	0	raylib.h	1733	I void SetAudioStreamPan(AudioStream stream, float pan); // Set pan for audio stream (-1.0 left, 0.0 center, 1.0 right)
+SetAudioStreamPitch	function	2	0	raylib.h	1732	I void SetAudioStreamPitch(AudioStream stream, float pitch); // Set pitch for audio stream (1.0 is base level)
+SetAudioStreamVolume	function	2	0	raylib.h	1731	I void SetAudioStreamVolume(AudioStream stream, float volume); // Set volume for audio stream (1.0 is max level)
+SetAutomationEventBaseFrame	function	1	0	raylib.h	1190	I void SetAutomationEventBaseFrame(int frame); // Set automation event internal base frame to start recording
+SetAutomationEventList	function	1	0	raylib.h	1189	I void SetAutomationEventList(AutomationEventList *list); // Set automation event list to record to
+SetClipboardText	function	1	0	raylib.h	1032	I void SetClipboardText(const char *text); // Set clipboard text content
+SetConfigFlags	function	1	0	raylib.h	1115	I void SetConfigFlags(unsigned int flags); // Set up init configuration flags (view FLAGS)
+SetExitKey	function	1	0	raylib.h	1208	I void SetExitKey(int key); // Set a custom key to exit program (default is ESC)
+SetGamepadMappings	function	1	0	raylib.h	1220	I int SetGamepadMappings(const char *mappings); // Set internal gamepad mappings (SDL_GameControllerDB)
+SetGamepadVibration	function	4	0	raylib.h	1221	I void SetGamepadVibration(int gamepad, float leftMotor, float rightMotor, float duration); // Set gamepad vibration for both motors (duration in seconds)
+SetGesturesEnabled	function	1	0	raylib.h	1249	I void SetGesturesEnabled(unsigned int flags); // Enable a set of gestures using flags
+SetLoadFileDataCallback	function	1	0	raylib.h	1139	I void SetLoadFileDataCallback(LoadFileDataCallback callback); // Set custom file binary data loader
+SetLoadFileTextCallback	function	1	0	raylib.h	1141	I void SetLoadFileTextCallback(LoadFileTextCallback callback); // Set custom file text data loader
+SetMasterVolume	function	1	0	raylib.h	1669	I void SetMasterVolume(float volume); // Set master volume (listener)
+SetMaterialTexture	function	3	0	raylib.h	1640	I void SetMaterialTexture(Material *material, int mapType, Texture2D texture); // Set texture for a material map type (MATERIAL_MAP_DIFFUSE, MATERIAL_MAP_SPECULAR...)
+SetModelMeshMaterial	function	3	0	raylib.h	1641	I void SetModelMeshMaterial(Model *model, int meshId, int materialId); // Set material for a mesh
+SetMouseCursor	function	1	0	raylib.h	1237	I void SetMouseCursor(int cursor); // Set mouse cursor
+SetMouseOffset	function	2	0	raylib.h	1233	I void SetMouseOffset(int offsetX, int offsetY); // Set mouse offset
+SetMousePosition	function	2	0	raylib.h	1232	I void SetMousePosition(int x, int y); // Set mouse position XY
+SetMouseScale	function	2	0	raylib.h	1234	I void SetMouseScale(float scaleX, float scaleY); // Set mouse scaling
+SetMusicPan	function	2	0	raylib.h	1716	I void SetMusicPan(Music music, float pan); // Set pan for music (-1.0 left, 0.0 center, 1.0 right)
+SetMusicPitch	function	2	0	raylib.h	1715	I void SetMusicPitch(Music music, float pitch); // Set pitch for music (1.0 is base level)
+SetMusicVolume	function	2	0	raylib.h	1714	I void SetMusicVolume(Music music, float volume); // Set volume for music (1.0 is max level)
+SetPixelColor	function	3	0	raylib.h	1485	I void SetPixelColor(void *dstPtr, Color color, int format); // Set color formatted into destination pixel pointer
+SetRandomSeed	function	1	0	raylib.h	1108	I void SetRandomSeed(unsigned int seed); // Set the seed for the random number generator
+SetSaveFileDataCallback	function	1	0	raylib.h	1140	I void SetSaveFileDataCallback(SaveFileDataCallback callback); // Set custom file binary data saver
+SetSaveFileTextCallback	function	1	0	raylib.h	1142	I void SetSaveFileTextCallback(SaveFileTextCallback callback); // Set custom file text data saver
+SetShaderValue	function	4	0	raylib.h	1076	I void SetShaderValue(Shader shader, int locIndex, const void *value, int uniformType); // Set shader uniform value
+SetShaderValueMatrix	function	3	0	raylib.h	1078	I void SetShaderValueMatrix(Shader shader, int locIndex, Matrix mat); // Set shader uniform value (matrix 4x4)
+SetShaderValueTexture	function	3	0	raylib.h	1079	I void SetShaderValueTexture(Shader shader, int locIndex, Texture2D texture); // Set shader uniform value and bind the texture (sampler2d)
+SetShaderValueV	function	5	0	raylib.h	1077	I void SetShaderValueV(Shader shader, int locIndex, const void *value, int uniformType, int count); // Set shader uniform value vector
+SetShapesTexture	function	2	0	raylib.h	1270	I void SetShapesTexture(Texture2D texture, Rectangle rec); // Set texture and rectangle to be used on shapes drawing
+SetSoundPan	function	2	0	raylib.h	1695	I void SetSoundPan(Sound sound, float pan); // Set pan for a sound (-1.0 left, 0.0 center, 1.0 right)
+SetSoundPitch	function	2	0	raylib.h	1694	I void SetSoundPitch(Sound sound, float pitch); // Set pitch for a sound (1.0 is base level)
+SetSoundVolume	function	2	0	raylib.h	1693	I void SetSoundVolume(Sound sound, float volume); // Set volume for a sound (1.0 is max level)
+SetTargetFPS	function	1	0	raylib.h	1094	I void SetTargetFPS(int fps); // Set target FPS (maximum)
+SetTextLineSpacing	function	1	0	raylib.h	1514	I void SetTextLineSpacing(int spacing); // Set vertical line spacing when drawing with line-breaks
+SetTextureFilter	function	2	0	raylib.h	1458	I void SetTextureFilter(Texture2D texture, int filter); // Set texture scaling filter mode
+SetTextureWrap	function	2	0	raylib.h	1459	I void SetTextureWrap(Texture2D texture, int wrap); // Set texture wrapping mode
+SetTraceLogCallback	function	1	0	raylib.h	1121	I void SetTraceLogCallback(TraceLogCallback callback); // Set custom trace log
+SetTraceLogLevel	function	1	0	raylib.h	1119	I void SetTraceLogLevel(int logLevel); // Set the current threshold (minimum) log level
+SetWindowFocused	function	0	0	raylib.h	1015	I void SetWindowFocused(void); // Set window focused
+SetWindowIcon	function	1	0	raylib.h	1006	I void SetWindowIcon(Image image); // Set icon for window (single image, RGBA 32bit)
+SetWindowIcons	function	2	0	raylib.h	1007	I void SetWindowIcons(Image *images, int count); // Set icon for window (multiple images, RGBA 32bit)
+SetWindowMaxSize	function	2	0	raylib.h	1012	I void SetWindowMaxSize(int width, int height); // Set window maximum dimensions (for FLAG_WINDOW_RESIZABLE)
+SetWindowMinSize	function	2	0	raylib.h	1011	I void SetWindowMinSize(int width, int height); // Set window minimum dimensions (for FLAG_WINDOW_RESIZABLE)
+SetWindowMonitor	function	1	0	raylib.h	1010	I void SetWindowMonitor(int monitor); // Set monitor for the current window
+SetWindowOpacity	function	1	0	raylib.h	1014	I void SetWindowOpacity(float opacity); // Set window opacity [0.0f..1.0f]
+SetWindowPosition	function	2	0	raylib.h	1009	I void SetWindowPosition(int x, int y); // Set window position on screen
+SetWindowSize	function	2	0	raylib.h	1013	I void SetWindowSize(int width, int height); // Set window dimensions
+SetWindowState	function	1	0	raylib.h	999	I void SetWindowState(unsigned int flags); // Set window configuration state using flags
+SetWindowTitle	function	1	0	raylib.h	1008	I void SetWindowTitle(const char *title); // Set title for window
+Shader	typedef_struct	-1	0	raylib.h	375	t Shader {
+ShaderAttributeDataType	typedef_enum	-1	0	raylib.h	844	m {
+ShaderLocationIndex	typedef_enum	-1	0	raylib.h	790	m {
+ShaderUniformDataType	typedef_enum	-1	0	raylib.h	827	m {
+ShowCursor	function	0	0	raylib.h	1039	I void ShowCursor(void); // Show cursor
+Sound	typedef_struct	-1	0	raylib.h	489	t Sound {
+StartAutomationEventRecording	function	0	0	raylib.h	1191	I void StartAutomationEventRecording(void); // Start recording automation events (AutomationEventList must be set)
+StopAudioStream	function	1	0	raylib.h	1730	I void StopAudioStream(AudioStream stream); // Stop audio stream
+StopAutomationEventRecording	function	0	0	raylib.h	1192	I void StopAutomationEventRecording(void); // Stop recording automation events
+StopMusicStream	function	1	0	raylib.h	1710	I void StopMusicStream(Music music); // Stop music playing
+StopSound	function	1	0	raylib.h	1689	I void StopSound(Sound sound); // Stop playing a sound
+SwapScreenBuffer	function	0	0	raylib.h	1103	I void SwapScreenBuffer(void); // Swap back buffer with front buffer (screen drawing)
+TakeScreenshot	function	1	0	raylib.h	1114	I void TakeScreenshot(const char *fileName); // Takes a screenshot of current screen (filename extension defines format)
+TextAppend	function	3	0	raylib.h	1553	I void TextAppend(char *text, const char *append, int *position); // Append text at specific position and move cursor
+TextCopy	function	2	0	raylib.h	1538	I int TextCopy(char *dst, const char *src); // Copy one string to another, returns bytes copied
+TextFindIndex	function	2	0	raylib.h	1554	I int TextFindIndex(const char *text, const char *search); // Find first text occurrence within a string, -1 if not found
+TextFormat	function	1	1	raylib.h	1541	I const char *TextFormat(const char *text, ...); // Text formatting with variables (sprintf() style)
+TextInsert	function	3	0	raylib.h	1549	I char *TextInsert(const char *text, const char *insert, int position); // Insert text in a defined byte position
+TextInsertAlloc	function	3	0	raylib.h	1550	I char *TextInsertAlloc(const char *text, const char *insert, int position); // Insert text in a defined byte position, memory must be MemFree()
+TextIsEqual	function	2	0	raylib.h	1539	I bool TextIsEqual(const char *text1, const char *text2); // Check if two text strings are equal
+TextJoin	function	3	0	raylib.h	1551	I char *TextJoin(char **textList, int count, const char *delimiter); // Join text strings with delimiter
+TextLength	function	1	0	raylib.h	1540	I unsigned int TextLength(const char *text); // Get text length, checks for '\0' ending
+TextRemoveSpaces	function	1	0	raylib.h	1543	I const char *TextRemoveSpaces(const char *text); // Remove text spaces, concat words
+TextReplace	function	3	0	raylib.h	1545	I char *TextReplace(const char *text, const char *search, const char *replacement); // Replace text string with new string
+TextReplaceAlloc	function	3	0	raylib.h	1546	I char *TextReplaceAlloc(const char *text, const char *search, const char *replacement); // Replace text string with new string, memory must be MemFree()
+TextReplaceBetween	function	4	0	raylib.h	1547	I char *TextReplaceBetween(const char *text, const char *begin, const char *end, const char *replacement); // Replace text between two specific strings
+TextReplaceBetweenAlloc	function	4	0	raylib.h	1548	I char *TextReplaceBetweenAlloc(const char *text, const char *begin, const char *end, const char *replacement); // Replace text between two specific strings, memory must be MemFree()
+TextSplit	function	3	0	raylib.h	1552	I char **TextSplit(const char *text, char delimiter, int *count); // Split text into multiple strings, using MAX_TEXTSPLIT_COUNT static strings
+TextSubtext	function	3	0	raylib.h	1542	I const char *TextSubtext(const char *text, int position, int length); // Get a piece of a text string
+TextToCamel	function	1	0	raylib.h	1559	I char *TextToCamel(const char *text); // Get Camel case notation version of provided string
+TextToFloat	function	1	0	raylib.h	1561	I float TextToFloat(const char *text); // Get float value from text
+TextToInteger	function	1	0	raylib.h	1560	I int TextToInteger(const char *text); // Get integer value from text
+TextToLower	function	1	0	raylib.h	1556	I char *TextToLower(const char *text); // Get lower case version of provided string
+TextToPascal	function	1	0	raylib.h	1557	I char *TextToPascal(const char *text); // Get Pascal case notation version of provided string
+TextToSnake	function	1	0	raylib.h	1558	I char *TextToSnake(const char *text); // Get Snake case notation version of provided string
+TextToUpper	function	1	0	raylib.h	1555	I char *TextToUpper(const char *text); // Get upper case version of provided string
+Texture	typedef_struct	-1	0	raylib.h	273	t Texture {
+Texture2D	typedef_alias	-1	0	raylib.h	282	e Texture2D;
+TextureCubemap	typedef_alias	-1	0	raylib.h	285	e TextureCubemap;
+TextureFilter	typedef_enum	-1	0	raylib.h	883	m {
+TextureWrap	typedef_enum	-1	0	raylib.h	893	m {
+ToggleBorderlessWindowed	function	0	0	raylib.h	1002	I void ToggleBorderlessWindowed(void); // Toggle window state: borderless windowed, resizes window to match monitor resolution
+ToggleFullscreen	function	0	0	raylib.h	1001	I void ToggleFullscreen(void); // Toggle window state: fullscreen/windowed, resizes monitor to match window resolution
+TouchAction	typedef_enum	-1	0	rgestures.h	98	m {
+TraceLog	function	2	1	raylib.h	1120	I void TraceLog(int logLevel, const char *text, ...); // Show trace log messages (LOG_DEBUG, LOG_INFO, LOG_WARNING, LOG_ERROR...)
+TraceLogCallback	typedef_alias	-1	0	raylib.h	968	d (*TraceLogCallback)(int logLevel, const char *text, va_list args); // Logging: Redirect trace log messages
+TraceLogLevel	typedef_enum	-1	0	raylib.h	576	m {
+Transform	typedef_struct	-1	0	raylib.h	395	t Transform {
+UnloadAudioStream	function	1	0	raylib.h	1723	I void UnloadAudioStream(AudioStream stream); // Unload audio stream and free memory
+UnloadAutomationEventList	function	1	0	raylib.h	1187	I void UnloadAutomationEventList(AutomationEventList list); // Unload automation events list from file
+UnloadCodepoints	function	1	0	raylib.h	1526	I void UnloadCodepoints(int *codepoints); // Unload codepoints data from memory
+UnloadDirectoryFiles	function	1	0	raylib.h	1168	I void UnloadDirectoryFiles(FilePathList files); // Unload filepaths
+UnloadDroppedFiles	function	1	0	raylib.h	1171	I void UnloadDroppedFiles(FilePathList files); // Unload dropped filepaths
+UnloadFileData	function	1	0	raylib.h	1130	I void UnloadFileData(unsigned char *data); // Unload file data allocated by LoadFileData()
+UnloadFileText	function	1	0	raylib.h	1134	I void UnloadFileText(char *text); // Unload file text data allocated by LoadFileText()
+UnloadFont	function	1	0	raylib.h	1502	I void UnloadFont(Font font); // Unload font from GPU memory (VRAM)
+UnloadFontData	function	2	0	raylib.h	1501	I void UnloadFontData(GlyphInfo *glyphs, int glyphCount); // Unload font chars info data (RAM)
+UnloadImage	function	1	0	raylib.h	1363	I void UnloadImage(Image image); // Unload image from CPU memory (RAM)
+UnloadImageColors	function	1	0	raylib.h	1412	I void UnloadImageColors(Color *colors); // Unload color data loaded with LoadImageColors()
+UnloadImagePalette	function	1	0	raylib.h	1413	I void UnloadImagePalette(Color *colors); // Unload colors palette loaded with LoadImagePalette()
+UnloadMaterial	function	1	0	raylib.h	1639	I void UnloadMaterial(Material material); // Unload material from GPU memory (VRAM)
+UnloadMesh	function	1	0	raylib.h	1614	I void UnloadMesh(Mesh mesh); // Unload mesh data from CPU and GPU
+UnloadModel	function	1	0	raylib.h	1598	I void UnloadModel(Model model); // Unload model (including meshes) from memory (RAM and/or VRAM)
+UnloadModelAnimations	function	2	0	raylib.h	1647	I void UnloadModelAnimations(ModelAnimation *animations, int animCount); // Unload animation array data
+UnloadMusicStream	function	1	0	raylib.h	1706	I void UnloadMusicStream(Music music); // Unload music stream
+UnloadRandomSequence	function	1	0	raylib.h	1111	I void UnloadRandomSequence(int *sequence); // Unload random values sequence
+UnloadRenderTexture	function	1	0	raylib.h	1452	I void UnloadRenderTexture(RenderTexture2D target); // Unload render texture from GPU memory (VRAM)
+UnloadShader	function	1	0	raylib.h	1080	I void UnloadShader(Shader shader); // Unload shader from GPU memory (VRAM)
+UnloadSound	function	1	0	raylib.h	1682	I void UnloadSound(Sound sound); // Unload sound
+UnloadSoundAlias	function	1	0	raylib.h	1683	I void UnloadSoundAlias(Sound alias); // Unload sound alias (does not deallocate sample data)
+UnloadTextLines	function	2	0	raylib.h	1537	I void UnloadTextLines(char **text, int lineCount); // Unload text lines
+UnloadTexture	function	1	0	raylib.h	1450	I void UnloadTexture(Texture2D texture); // Unload texture from GPU memory (VRAM)
+UnloadUTF8	function	1	0	raylib.h	1524	I void UnloadUTF8(char *text); // Unload UTF-8 text encoded from codepoints array
+UnloadVrStereoConfig	function	1	0	raylib.h	1067	I void UnloadVrStereoConfig(VrStereoConfig config); // Unload VR stereo config
+UnloadWave	function	1	0	raylib.h	1681	I void UnloadWave(Wave wave); // Unload wave data
+UnloadWaveSamples	function	1	0	raylib.h	1700	I void UnloadWaveSamples(float *samples); // Unload samples data loaded with LoadWaveSamples()
+UpdateAudioStream	function	3	0	raylib.h	1724	I void UpdateAudioStream(AudioStream stream, const void *data, int frameCount); // Update audio stream buffers with data
+UpdateCamera	function	2	0	raylib.h	1261	I void UpdateCamera(Camera *camera, int mode); // Update camera position for selected mode
+UpdateCameraPro	function	4	0	raylib.h	1262	I void UpdateCameraPro(Camera *camera, Vector3 movement, Vector3 rotation, float zoom); // Update camera movement/rotation
+UpdateMeshBuffer	function	5	0	raylib.h	1613	I void UpdateMeshBuffer(Mesh mesh, int index, const void *data, int dataSize, int offset); // Update mesh vertex data in GPU for a specific buffer index
+UpdateModelAnimation	function	3	0	raylib.h	1645	I void UpdateModelAnimation(Model model, ModelAnimation anim, float frame); // Update model animation pose (vertex buffers and bone matrices)
+UpdateModelAnimationEx	function	6	0	raylib.h	1646	I void UpdateModelAnimationEx(Model model, ModelAnimation animA, float frameA, ModelAnimation animB, float frameB, float blend); // Update model animation pose, blending two animations
+UpdateMusicStream	function	1	0	raylib.h	1709	I void UpdateMusicStream(Music music); // Update buffers for music streaming
+UpdateSound	function	3	0	raylib.h	1680	I void UpdateSound(Sound sound, const void *data, int frameCount); // Update sound buffer with new data (default data format: 32 bit float, stereo)
+UpdateTexture	function	2	0	raylib.h	1453	I void UpdateTexture(Texture2D texture, const void *pixels); // Update GPU texture with new data (pixels should be able to fill texture)
+UpdateTextureRec	function	3	0	raylib.h	1454	I void UpdateTextureRec(Texture2D texture, Rectangle rec, const void *pixels); // Update GPU texture rectangle with new data (pixels and rec should fit in texture)
+UploadMesh	function	2	0	raylib.h	1612	I void UploadMesh(Mesh *mesh, bool dynamic); // Upload mesh vertex data in GPU and provide VAO/VBO ids
+Vector2	typedef_struct	-1	0	raylib.h	216	t Vector2 {
+Vector2Add	function	2	0	raymath.h	291	I Vector2 Vector2Add(Vector2 v1, Vector2 v2)
+Vector2AddValue	function	2	0	raymath.h	299	I Vector2 Vector2AddValue(Vector2 v, float add)
+Vector2Angle	function	2	0	raymath.h	373	I float Vector2Angle(Vector2 v1, Vector2 v2)
+Vector2Clamp	function	3	0	raymath.h	550	I Vector2 Vector2Clamp(Vector2 v, Vector2 min, Vector2 max)
+Vector2ClampValue	function	3	0	raymath.h	561	I Vector2 Vector2ClampValue(Vector2 v, float min, float max)
+Vector2CrossProduct	function	2	0	raymath.h	347	I float Vector2CrossProduct(Vector2 v1, Vector2 v2)
+Vector2Distance	function	2	0	raymath.h	355	I float Vector2Distance(Vector2 v1, Vector2 v2)
+Vector2DistanceSqr	function	2	0	raymath.h	363	I float Vector2DistanceSqr(Vector2 v1, Vector2 v2)
+Vector2Divide	function	2	0	raymath.h	423	I Vector2 Vector2Divide(Vector2 v1, Vector2 v2)
+Vector2DotProduct	function	2	0	raymath.h	339	I float Vector2DotProduct(Vector2 v1, Vector2 v2)
+Vector2Equals	function	2	0	raymath.h	582	I int Vector2Equals(Vector2 p, Vector2 q)
+Vector2Invert	function	1	0	raymath.h	541	I Vector2 Vector2Invert(Vector2 v)
+Vector2Length	function	1	0	raymath.h	323	I float Vector2Length(Vector2 v)
+Vector2LengthSqr	function	1	0	raymath.h	331	I float Vector2LengthSqr(Vector2 v)
+Vector2Lerp	function	3	0	raymath.h	462	I Vector2 Vector2Lerp(Vector2 v1, Vector2 v2, float amount)
+Vector2LineAngle	function	2	0	raymath.h	388	I float Vector2LineAngle(Vector2 start, Vector2 end)
+Vector2Max	function	2	0	raymath.h	497	I Vector2 Vector2Max(Vector2 v1, Vector2 v2)
+Vector2Min	function	2	0	raymath.h	486	I Vector2 Vector2Min(Vector2 v1, Vector2 v2)
+Vector2MoveTowards	function	3	0	raymath.h	522	I Vector2 Vector2MoveTowards(Vector2 v, Vector2 target, float maxDistance)
+Vector2Multiply	function	2	0	raymath.h	407	I Vector2 Vector2Multiply(Vector2 v1, Vector2 v2)
+Vector2Negate	function	1	0	raymath.h	415	I Vector2 Vector2Negate(Vector2 v)
+Vector2Normalize	function	1	0	raymath.h	431	I Vector2 Vector2Normalize(Vector2 v)
+Vector2One	function	0	0	raymath.h	283	I Vector2 Vector2One(void)
+Vector2Reflect	function	2	0	raymath.h	473	I Vector2 Vector2Reflect(Vector2 v, Vector2 normal)
+Vector2Refract	function	3	0	raymath.h	599	I Vector2 Vector2Refract(Vector2 v, Vector2 n, float r)
+Vector2Rotate	function	2	0	raymath.h	508	I Vector2 Vector2Rotate(Vector2 v, float angle)
+Vector2Scale	function	2	0	raymath.h	399	I Vector2 Vector2Scale(Vector2 v, float scale)
+Vector2Subtract	function	2	0	raymath.h	307	I Vector2 Vector2Subtract(Vector2 v1, Vector2 v2)
+Vector2SubtractValue	function	2	0	raymath.h	315	I Vector2 Vector2SubtractValue(Vector2 v, float sub)
+Vector2Transform	function	2	0	raymath.h	447	I Vector2 Vector2Transform(Vector2 v, Matrix mat)
+Vector2Zero	function	0	0	raymath.h	275	I Vector2 Vector2Zero(void)
+Vector3	typedef_struct	-1	0	raylib.h	222	t Vector3 {
+Vector3Add	function	2	0	raymath.h	640	I Vector3 Vector3Add(Vector3 v1, Vector3 v2)
+Vector3AddValue	function	2	0	raymath.h	648	I Vector3 Vector3AddValue(Vector3 v, float add)
+Vector3Angle	function	2	0	raymath.h	775	I float Vector3Angle(Vector3 v1, Vector3 v2)
+Vector3Barycenter	function	4	0	raymath.h	1063	I Vector3 Vector3Barycenter(Vector3 p, Vector3 a, Vector3 b, Vector3 c)
+Vector3Clamp	function	3	0	raymath.h	1191	I Vector3 Vector3Clamp(Vector3 v, Vector3 min, Vector3 max)
+Vector3ClampValue	function	3	0	raymath.h	1203	I Vector3 Vector3ClampValue(Vector3 v, float min, float max)
+Vector3CrossProduct	function	2	0	raymath.h	688	I Vector3 Vector3CrossProduct(Vector3 v1, Vector3 v2)
+Vector3CubicHermite	function	5	0	raymath.h	1005	I Vector3 Vector3CubicHermite(Vector3 v1, Vector3 tangent1, Vector3 v2, Vector3 tangent2, float amount)
+Vector3Distance	function	2	0	raymath.h	749	I float Vector3Distance(Vector3 v1, Vector3 v2)
+Vector3DistanceSqr	function	2	0	raymath.h	762	I float Vector3DistanceSqr(Vector3 v1, Vector3 v2)
+Vector3Divide	function	2	0	raymath.h	796	I Vector3 Vector3Divide(Vector3 v1, Vector3 v2)
+Vector3DotProduct	function	2	0	raymath.h	741	I float Vector3DotProduct(Vector3 v1, Vector3 v2)
+Vector3Equals	function	2	0	raymath.h	1225	I int Vector3Equals(Vector3 p, Vector3 q)
+Vector3Invert	function	1	0	raymath.h	1182	I Vector3 Vector3Invert(Vector3 v)
+Vector3Length	function	1	0	raymath.h	725	I float Vector3Length(const Vector3 v)
+Vector3LengthSqr	function	1	0	raymath.h	733	I float Vector3LengthSqr(const Vector3 v)
+Vector3Lerp	function	3	0	raymath.h	992	I Vector3 Vector3Lerp(Vector3 v1, Vector3 v2, float amount)
+Vector3Max	function	2	0	raymath.h	1050	I Vector3 Vector3Max(Vector3 v1, Vector3 v2)
+Vector3Min	function	2	0	raymath.h	1038	I Vector3 Vector3Min(Vector3 v1, Vector3 v2)
+Vector3MoveTowards	function	3	0	raymath.h	971	I Vector3 Vector3MoveTowards(Vector3 v, Vector3 target, float maxDistance)
+Vector3Multiply	function	2	0	raymath.h	680	I Vector3 Vector3Multiply(Vector3 v1, Vector3 v2)
+Vector3Negate	function	1	0	raymath.h	788	I Vector3 Vector3Negate(Vector3 v)
+Vector3Normalize	function	1	0	raymath.h	804	I Vector3 Vector3Normalize(Vector3 v)
+Vector3One	function	0	0	raymath.h	632	I Vector3 Vector3One(void)
+Vector3OrthoNormalize	function	2	0	raymath.h	858	I void Vector3OrthoNormalize(Vector3 *v1, Vector3 *v2)
+Vector3Perpendicular	function	1	0	raymath.h	696	I Vector3 Vector3Perpendicular(Vector3 v)
+Vector3Project	function	2	0	raymath.h	822	I Vector3 Vector3Project(Vector3 v1, Vector3 v2)
+Vector3Reflect	function	2	0	raymath.h	1020	I Vector3 Vector3Reflect(Vector3 v, Vector3 normal)
+Vector3Refract	function	3	0	raymath.h	1243	I Vector3 Vector3Refract(Vector3 v, Vector3 n, float r)
+Vector3Reject	function	2	0	raymath.h	839	I Vector3 Vector3Reject(Vector3 v1, Vector3 v2)
+Vector3RotateByAxisAngle	function	3	0	raymath.h	919	I Vector3 Vector3RotateByAxisAngle(Vector3 v, Vector3 axis, float angle)
+Vector3RotateByQuaternion	function	2	0	raymath.h	907	I Vector3 Vector3RotateByQuaternion(Vector3 v, Quaternion q)
+Vector3Scale	function	2	0	raymath.h	672	I Vector3 Vector3Scale(Vector3 v, float scalar)
+Vector3Subtract	function	2	0	raymath.h	656	I Vector3 Vector3Subtract(Vector3 v1, Vector3 v2)
+Vector3SubtractValue	function	2	0	raymath.h	664	I Vector3 Vector3SubtractValue(Vector3 v, float sub)
+Vector3ToFloatV	function	1	0	raymath.h	1170	I float3 Vector3ToFloatV(Vector3 v)
+Vector3Transform	function	2	0	raymath.h	891	I Vector3 Vector3Transform(Vector3 v, Matrix mat)
+Vector3Unproject	function	3	0	raymath.h	1087	I Vector3 Vector3Unproject(Vector3 source, Matrix projection, Matrix view)
+Vector3Zero	function	0	0	raymath.h	624	I Vector3 Vector3Zero(void)
+Vector4	typedef_struct	-1	0	raylib.h	229	t Vector4 {
+Vector4Add	function	2	0	raymath.h	1282	I Vector4 Vector4Add(Vector4 v1, Vector4 v2)
+Vector4AddValue	function	2	0	raymath.h	1294	I Vector4 Vector4AddValue(Vector4 v, float add)
+Vector4Distance	function	2	0	raymath.h	1351	I float Vector4Distance(Vector4 v1, Vector4 v2)
+Vector4DistanceSqr	function	2	0	raymath.h	1360	I float Vector4DistanceSqr(Vector4 v1, Vector4 v2)
+Vector4Divide	function	2	0	raymath.h	1391	I Vector4 Vector4Divide(Vector4 v1, Vector4 v2)
+Vector4DotProduct	function	2	0	raymath.h	1344	I float Vector4DotProduct(Vector4 v1, Vector4 v2)
+Vector4Equals	function	2	0	raymath.h	1485	I int Vector4Equals(Vector4 p, Vector4 q)
+Vector4Invert	function	1	0	raymath.h	1478	I Vector4 Vector4Invert(Vector4 v)
+Vector4Length	function	1	0	raymath.h	1330	I float Vector4Length(Vector4 v)
+Vector4LengthSqr	function	1	0	raymath.h	1337	I float Vector4LengthSqr(Vector4 v)
+Vector4Lerp	function	3	0	raymath.h	1442	I Vector4 Vector4Lerp(Vector4 v1, Vector4 v2, float amount)
+Vector4Max	function	2	0	raymath.h	1429	I Vector4 Vector4Max(Vector4 v1, Vector4 v2)
+Vector4Min	function	2	0	raymath.h	1416	I Vector4 Vector4Min(Vector4 v1, Vector4 v2)
+Vector4MoveTowards	function	3	0	raymath.h	1455	I Vector4 Vector4MoveTowards(Vector4 v, Vector4 target, float maxDistance)
+Vector4Multiply	function	2	0	raymath.h	1377	I Vector4 Vector4Multiply(Vector4 v1, Vector4 v2)
+Vector4Negate	function	1	0	raymath.h	1384	I Vector4 Vector4Negate(Vector4 v)
+Vector4Normalize	function	1	0	raymath.h	1398	I Vector4 Vector4Normalize(Vector4 v)
+Vector4One	function	0	0	raymath.h	1275	I Vector4 Vector4One(void)
+Vector4Scale	function	2	0	raymath.h	1370	I Vector4 Vector4Scale(Vector4 v, float scale)
+Vector4Subtract	function	2	0	raymath.h	1306	I Vector4 Vector4Subtract(Vector4 v1, Vector4 v2)
+Vector4SubtractValue	function	2	0	raymath.h	1318	I Vector4 Vector4SubtractValue(Vector4 v, float add)
+Vector4Zero	function	0	0	raymath.h	1268	I Vector4 Vector4Zero(void)
+VrDeviceInfo	typedef_struct	-1	0	raylib.h	505	t VrDeviceInfo {
+VrStereoConfig	typedef_struct	-1	0	raylib.h	518	t VrStereoConfig {
+WaitTime	function	1	0	raylib.h	1105	I void WaitTime(double seconds); // Wait for some time (halt program execution)
+Wave	typedef_struct	-1	0	raylib.h	465	t Wave {
+WaveCopy	function	1	0	raylib.h	1696	I Wave WaveCopy(Wave wave); // Copy a wave to a new wave
+WaveCrop	function	3	0	raylib.h	1697	I void WaveCrop(Wave *wave, int initFrame, int finalFrame); // Crop a wave to defined frames range
+WaveFormat	function	4	0	raylib.h	1698	I void WaveFormat(Wave *wave, int sampleRate, int sampleSize, int channels); // Convert wave data to desired format
+WindowShouldClose	function	0	0	raylib.h	990	I bool WindowShouldClose(void); // Check if application should close (KEY_ESCAPE pressed or windows close icon clicked)
+Wrap	function	3	0	raymath.h	251	I float Wrap(float value, float min, float max)

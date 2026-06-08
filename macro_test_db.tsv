@@ -1,0 +1,4 @@
+name	kind	paramMin	varargs	origin	originLine	decl
+MINI_RAYLIB_H	define	-1	0	mini_raylib.h	3	
+Rectangle	typedef_struct	-1	0	mini_raylib.h	7	t Rectangle { float x, y, w, h; } Rectangle;
+SUPPORT_TRACELOG	define	-1	0	mini_raylib.h	5	
