@@ -2,6 +2,8 @@
 
 代码来自JackalClient-raylib中的[rlrenamer](https://github.com/JackalClient/JackalClient-raylib/tree/master/rlrenamer)
 
+原[README.md](./rlrenamer%20-%20README.md)
+
 # rlrenamer 改动记录
 
 ## 缘由
