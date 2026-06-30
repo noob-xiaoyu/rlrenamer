@@ -8,7 +8,7 @@
 
 ## 缘由
 
-实现方案 C：`--with-macros` 宏名仅在预处理器指令上下文（`#define`/`#ifdef`/`#ifndef`/`#undef`/`defined()`）中重命名，其他位置保持原样。同时修复了审查中发现的 5 个 bug。
+`--with-macros` 宏名仅在预处理器指令上下文（`#define`/`#ifdef`/`#ifndef`/`#undef`/`defined()`）中重命名，其他位置保持原样。同时修复了审查中发现的 5 个 bug。
 
 ## 修改文件清单
 
